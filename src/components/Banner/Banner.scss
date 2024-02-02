@@ -1,0 +1,50 @@
+$font-primary: 'Share Tech', sans-serif;
+$bg-color-header: #4F9B65;
+
+
+.SecBanner{
+  font-family: $font-primary;
+  color: white;
+  width: 100%;
+  background-image: url('/src/assets/img/back.gif');
+  display: flex;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  justify-content: center;
+  height: 80vh;
+  
+  
+  .WrapperContainer{
+    
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+    height: 100%;
+
+    h1{
+      font-size: 5rem;
+    }
+
+    h2{
+      font-size: 3rem;
+    }
+
+    button{
+      border-radius: 14px;
+      border: none;
+      width: 16rem;
+      padding: 18px 0px;
+      cursor: pointer;
+      background-color: #4F9B65;
+      color: white;
+    }
+
+
+    
+ 
+  }
+}

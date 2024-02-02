@@ -1,0 +1,196 @@
+*{
+  margin: 0;
+  padding: 0;
+  text-decoration: none;
+  list-style: none;
+  overflow-x: hidden;
+}
+
+body{
+  font-size: 16px;
+  
+}
+
+
+$font-primary: 'Share Tech', sans-serif;
+$text-green: #43BF7E;
+$btn-color-green: #43BF7E;
+$text-white: white; 
+
+.SobreSection{
+  font-family: $font-primary;
+  margin-top: 176px;
+  width: 100%;
+
+  .Container{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    gap: 30px;
+    
+
+    .Content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-start;
+      flex: 1;
+      
+      h2{
+        font-size: 5rem;
+        margin-bottom: 10px;
+        color: $text-green;
+      }
+
+      .TextContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+      }
+
+      button{
+        background-color: $btn-color-green;
+        color: $text-white;
+        border: none;
+        padding: 20px 60px;
+        border-radius: 14px;
+        font-size: 1rem;
+        margin-top: 15px;
+        cursor: pointer;
+      }
+      
+    }
+
+
+    .MidiaContainer{
+      flex: 1;
+      border-radius: 16px;
+      
+
+      img{
+        height: 450px;
+        border-radius: 16px;
+      
+      }
+    }
+  }
+}
+
+
+
+.GameplaySection{
+  padding-top: 80px;
+  padding-bottom: 80px;
+  font-family: $font-primary;
+  width: 100%;
+  margin-top: 130px;
+  color: $text-white;
+  background-color: #4F779B;
+
+  .Container{
+    gap: 30px;
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: row-reverse;
+
+
+    .Content{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: flex-end;
+      flex: 1;
+
+      .TextContainer{
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 10px;
+      }
+
+      h2{
+        font-size: 5rem;
+        margin-bottom: 10px;
+        color: $text-green;
+      }
+
+      p{
+        font-size: 16px;
+      }
+
+    }
+
+
+    .MidiaContainer{
+      flex: 1;
+      border-radius: 16px;
+
+      img{
+        height: 450px;
+        border-radius: 16px;
+      
+      }
+      
+
+    }
+  }
+}
+
+
+
+.PersonagensSection{
+  margin-top: 140px;
+  font-family: $font-primary;
+  width: 100%;
+
+  .Container{
+    margin: 0 auto;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+
+    .TextContainer{
+      align-items: center;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      width: 100%;
+
+      h4{
+        font-size: 2.5rem;
+        color: #181717;
+      }
+
+      h2{
+        color: $text-green;
+        font-size: 5rem;
+      }
+    }
+
+    .ContainerCards{
+      display: grid;
+      align-items: center;
+      justify-content: center;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 10px;
+      column-gap: 15px;
+
+      .Card{
+        margin-top: 2.5rem;
+        overflow: hidden;
+        border-radius: 16px;
+        height: 22rem;
+      }
+
+      img{
+        border-radius: 16px;
+      }
+    }
+  }
+}
+
+
+
+
