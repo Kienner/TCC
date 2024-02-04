@@ -2,6 +2,7 @@ import { useState } from 'react';
 import './App.scss';
 import Header from './components/Header/Header';
 import Banner from './components/Banner/Banner';
+import Parallax from './components/Parallax/Parallax';
 
 function App() {
   const [count, setCount] = useState(0);
@@ -108,6 +109,8 @@ function App() {
           </div>
         </div>
       </section>
+
+      <Parallax />
     </>
   );
 }
