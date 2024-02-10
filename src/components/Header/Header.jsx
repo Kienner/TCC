@@ -1,21 +1,42 @@
-import './Header.scss'
+import './Header.scss';
 
 
-function Header(){
+function Header() {
+  return (
+    <header>
+      <nav>
+        <div className="LogoDiv">
+          <a href="/">
+            <img src="\src\assets\img\logo.png" alt="" />
+          </a>
+        </div>
 
-    return (
+      
+          <ul>
+            <li>
+              <a href="">Menu</a>
+            </li>
+            <li>
+              <a href="">Sobre</a>
+            </li>
+            <li>
+              <a href="">Gameplay</a>
+            </li>
+            <li>
+              <a href="">Personagens</a>
+            </li>
+            <li>
+              <a href="">Atualizações</a>
+            </li>
 
-      <header>
-        <h1>Header</h1>
-      </header>
-     
-
-
-    )
-
-
-
-
+            <div className="ButtonsDiv">
+              <button>Login</button>
+              <button>Cadastrar-se</button>
+            </div>
+          </ul>
+      </nav>
+    </header>
+  );
 }
 
-export default Header
+export default Header;

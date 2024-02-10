@@ -1,0 +1,42 @@
+$font-primary: 'Share Tech', sans-serif;
+$bg-color-header: #4F9B65;
+
+
+footer{
+  width: 100%;
+  padding: 15px 0px;
+  background-color: #4F9B65;
+  color: white;
+
+  .Container{
+    width: 100%;
+    align-items: center;
+    justify-items: center;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    padding: 10px;
+    margin: 0 auto;    
+
+
+    img{
+      width: 200px;
+    }
+
+    ul{
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      li a{
+        color: white;
+        font-size: 1.2rem;
+        
+      }
+    }
+
+    .DivContent{
+      width: 30rem;
+    }
+
+  }
+
+}
