@@ -78,7 +78,7 @@ function Home() {
           </div>
         </div>
       </section>
-
+{/*
       <section className="PersonagensSection">
         <div className="Container">
           <div className="TextContainer">
@@ -101,6 +101,7 @@ function Home() {
           </div>
         </div>
       </section>
+      */}
 
       <Parallax />
 
