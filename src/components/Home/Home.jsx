@@ -78,30 +78,22 @@ function Home() {
           </div>
         </div>
       </section>
-{/*
-      <section className="PersonagensSection">
+
+      <section className='PersonagensSection'>
         <div className="Container">
-          <div className="TextContainer">
-            <h4>Conheça os</h4>
-            <h2>Personagens</h2>
+          <div className="TextDiv">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veritatis laudantium eos, culpa tenetur nesciunt blanditiis ab, perspiciatis itaque eum, vitae qui! Consequuntur rem ratione necessitatibus, culpa ex a vitae.</p>
           </div>
 
-          <div className="ContainerCards">
-            <div className="Card">
-              <img src="\src\assets\img\sobre.jpg" alt="" />
-            </div>
-
-            <div className="Card">
-              <img src="\src\assets\img\sobre.jpg" alt="" />
-            </div>
-
-            <div className="Card">
-              <img src="\src\assets\img\sobre.jpg" alt="" />
-            </div>
+          <div className="ImgDiv">
+            <img src="" alt="" />
           </div>
         </div>
+        
+
       </section>
-      */}
+  
+        
 
       <Parallax />
 

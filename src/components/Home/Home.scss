@@ -143,50 +143,15 @@ $text-white: white;
   font-family: $font-primary;
   width: 100%;
 
+
+  
   .Container{
-    margin: 0 auto;
     width: 90%;
-    display: flex;
-    flex-direction: column;
-
-    .TextContainer{
-      align-items: center;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      width: 100%;
-
-      h4{
-        font-size: 2.5rem;
-        color: #181717;
-      }
-
-      h2{
-        color: $text-green;
-        font-size: 5rem;
-      }
-    }
-
-    .ContainerCards{
-      display: grid;
-      align-items: center;
-      justify-content: center;
-      grid-template-columns: repeat(3, 1fr);
-      row-gap: 10px;
-      column-gap: 15px;
-
-      .Card{
-        margin-top: 2.5rem;
-        overflow: hidden;
-        border-radius: 16px;
-        height: 22rem;
-      }
-
-      img{
-        border-radius: 16px;
-      }
-    }
+    margin: 0 auto;
+    background-color: red;
   }
+
+
 }
 
 
