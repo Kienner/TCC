@@ -82,12 +82,23 @@ function Home() {
       <section className='PersonagensSection'>
         <div className="Container">
           <div className="TextDiv">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Optio veritatis laudantium eos, culpa tenetur nesciunt blanditiis ab, perspiciatis itaque eum, vitae qui! Consequuntur rem ratione necessitatibus, culpa ex a vitae.</p>
+            <h4>Conheça os</h4>
+            <h2>Personagens</h2>
           </div>
 
-          <div className="ImgDiv">
-            <img src="" alt="" />
+
+          <div className="WrapperPersonagens">
+            <div className="Personagens">
+              <img src="\src\assets\img\sobre.jpg" alt="" />
+            </div>
+
+            <div className="WrapperText">
+              <h2>Nome Personagens</h2>
+              <p>text exemplew</p>
+            </div>
+
           </div>
+
         </div>
         
 

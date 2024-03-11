@@ -42,6 +42,11 @@ $text-white: white;
         color: $text-green;
       }
 
+      p{
+        color: black;
+        text-align: left;
+      }
+
       .TextContainer{
         display: flex;
         flex-direction: column;
@@ -117,6 +122,7 @@ $text-white: white;
 
       p{
         font-size: 16px;
+        text-align: right;
       }
 
     }
@@ -148,16 +154,66 @@ $text-white: white;
   .Container{
     width: 90%;
     margin: 0 auto;
-    background-color: red;
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+    .TextDiv{
+     
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+
+      h2{
+        font-size: 5rem;
+      }
+
+      h4{
+        font-size: 2rem;
+      }
+    
+    }
+
+
+    .WrapperPersonagens{
+      display: flex;
+
+      width: 100%;
+      background-color: red;
+
+      .Personagens{
+        flex: 1;
+      }
+
+      .WrapperText{
+        flex: 1;
+        
+        p{
+          color: black;
+        }
+      }
+
+
+    }
+
+    
+
+
+    
+
+
   }
 
 
 }
 
 
-.SectionParallax{
-  width: 100%;
-  background-color: #43BF7E;
-}
+
+
+
+
 
 
