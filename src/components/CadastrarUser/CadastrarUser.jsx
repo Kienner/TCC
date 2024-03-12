@@ -1,62 +1,69 @@
-import React, { Component } from 'react';
-import './CadastrarUser.scss';
+import { initializeApp } from 'firebase/app';
+import React, { useEffect, useState } from 'react';
+import { collection, getDocs, getFirestore, addDoc } from 'firebase/firestore';
 
+const firebaseConfig = {
+  apiKey: "AIzaSyC-fQvh9ym1QbeW7roDwKTpzjB7OxuWqXs",
+  authDomain: "testedelogin-ea50d.firebaseapp.com",
+  databaseURL: "https://testedelogin-ea50d-default-rtdb.firebaseio.com",
+  projectId: "testedelogin-ea50d",
+  storageBucket: "testedelogin-ea50d.appspot.com",
+  messagingSenderId: "665839759271",
+  appId: "1:665839759271:web:d2dd8936bed805fc551082",
+  measurementId: "G-WY2SLC17HB"
+};
 
+const CadastrarUser = () => {
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [users, setUsers] = useState([]);
 
-export default class CadastrarUser extends Component {
-  render() {
+  useEffect(() => {
+    const firebaseApp = initializeApp(firebaseConfig);
+    const db = getFirestore(firebaseApp);
+    const userCollectionRef = collection(db, "users");
 
-    return (
-      
+    const getUsers = async () => {
+      const data = await getDocs(userCollectionRef);
+      setUsers(data.docs.map((doc) => ({ ...doc.data(), id: doc.id })));
+    };
 
-        <div className="WrapperForm">
+    getUsers();
+  }, []);
 
+  const handleCreateUser = async () => {
+    const firebaseApp = initializeApp(firebaseConfig);
+    const db = getFirestore(firebaseApp);
+    const userCollectionRef = collection(db, "users");
 
-            <form>  
-                <div className="WrapperItens">
-                    <label>Nome</label>
-                    <input type="text" />
-                </div>
+    const newUser = { name, email };
+    await addDoc(userCollectionRef, newUser);
 
-                <div className="WrapperItens">
-                    <label>Email</label>
-                    <input type="text" />
-                </div>
+    // Atualizar lista de usuários
+    const updatedUsers = [...users, newUser];
+    setUsers(updatedUsers);
 
-                <div className="WrapperItens">
-                    <label>Senha</label>
-                    <input type="text" />
-                </div>
+    // Limpar campos de entrada
+    setName("");
+    setEmail("");
+  };
 
-                <div className="WrapperItens">
-                    <label>Data</label>
-                    <input type="date" />
-                </div>
+  return (
+    <div>
+      <input type="text" placeholder='nome' value={name} onChange={e => setName(e.target.value)} />
+      <input type="text" placeholder='email' value={email} onChange={e => setEmail(e.target.value)} />
+      <button onClick={handleCreateUser}>Criar user</button>
 
-                <div className="WrapperItens">
-                    <input type="checkbox" />
-                    <label>Concordo com os termos de uso</label>
-                </div>
+      <ul>
+        {users.map(user => (
+          <div key={user.id}>
+            <li>{user.name}</li>
+            <li>{user.email}</li>
+          </div>
+        ))}
+      </ul>
+    </div>
+  );
+};
 
-                <div className="ButtonDiv">
-                    <input type="submit" value={"Enviar"} />
-
-                </div>
-
-        </form>
-
-
-
-
-        </div>
-
-        
-
-
-
-
-    )
-
-  }
-
-}
+export default CadastrarUser;
