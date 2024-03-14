@@ -88,15 +88,41 @@ function Home() {
 
 
           <div className="WrapperPersonagens">
-            <div className="Personagens">
+
+            <div className="CardPersonagem 1">
               <img src="\src\assets\img\sobre.jpg" alt="" />
             </div>
 
-            <div className="WrapperText">
-              <h2>Nome Personagens</h2>
-              <p>text exemplew</p>
+            <div className="CardPersonagem card2">
+              <img src="\src\assets\img\sobre.jpg" alt="" />
             </div>
 
+            <div className="CardPersonagem card3">
+              <img src="\src\assets\img\sobre.jpg" alt="" />
+            </div>
+
+            <div className="CardPersonagem card4">
+              <img src="\src\assets\img\sobre.jpg" alt="" />
+            </div>
+
+            <div className="CardPersonagem card5">
+              <img src="\src\assets\img\sobre.jpg" alt="" />
+            </div>
+
+            <div className="CardPersonagem card6">
+              <img src="\src\assets\img\sobre.jpg" alt="" />
+            </div>
+
+            <div className="CardPersonagem card7">
+              <img src="\src\assets\img\sobre.jpg" alt="" />
+            </div>
+
+            <div className="CardPersonagem card8">
+              <img src="\src\assets\img\sobre.jpg" alt="" />
+            </div>  
+
+
+            
           </div>
 
         </div>
@@ -104,9 +130,10 @@ function Home() {
 
       </section>
   
-        
 
       <Parallax />
+
+      
 
       <Footer />
     </>

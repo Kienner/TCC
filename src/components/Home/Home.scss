@@ -154,52 +154,43 @@ $text-white: white;
   .Container{
     width: 90%;
     margin: 0 auto;
-    align-items: center;
     display: flex;
     flex-direction: column;
     justify-content: center;
+    align-items: center;
+
 
     .TextDiv{
-     
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-
+      text-align: center;
 
       h2{
         font-size: 5rem;
+        color: #43BF7E;
       }
 
       h4{
-        font-size: 2rem;
+        font-size: 3rem;
       }
-    
-    }
+      
 
+    }
+  
 
     .WrapperPersonagens{
-      display: flex;
+      margin-top: 5rem;
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+    
+      gap: 20px;
+    
 
-      width: 100%;
-      background-color: red;
-
-      .Personagens{
-        flex: 1;
-      }
-
-      .WrapperText{
-        flex: 1;
-        
-        p{
-          color: black;
+      .CardPersonagem{
+        img{
+          width: 400px;
         }
       }
 
-
     }
-
-    
 
 
     
