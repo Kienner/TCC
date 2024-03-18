@@ -2,6 +2,9 @@ import { initializeApp } from 'firebase/app';
 import React, { useEffect, useState } from 'react';
 import { collection, getDocs, getFirestore, addDoc } from 'firebase/firestore';
 
+
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyC-fQvh9ym1QbeW7roDwKTpzjB7OxuWqXs",
   authDomain: "testedelogin-ea50d.firebaseapp.com",

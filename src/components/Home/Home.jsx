@@ -5,6 +5,10 @@ import Header from '../Header/Header';
 import Parallax from '../Parallax/Parallax';
 import Banner from '../Banner/Banner';
 import Footer from '../Footer/Footer';
+import Carousel from '../Carousel/Carousel';
+
+
+
 
 
 
@@ -131,7 +135,11 @@ function Home() {
       </section>
   
 
+
+
       <Parallax />
+
+      <Carousel />
 
       
 
