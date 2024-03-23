@@ -1,13 +1,10 @@
 import React, { Component } from 'react';
-import {initializeApp} from 'firebase/app'
+
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
 import CadastrarAtt from './components/CadastrarAtt/CadastrarAtt';
 import Login from './components/Login/Login';
-import CadastrarUser from './components/CadastrarUser/CadastrarUser';
-
-
-
+import Register from './components/Register/Register';
 
 
 
@@ -20,8 +17,7 @@ export class App extends Component {
           <Route path="/" element={<Home/>} />
           <Route path="/Atualizacoes" element={<CadastrarAtt/>} />
           <Route path="/Login" element={<Login/>} />
-          <Route path="/Cadastro" element={<CadastrarUser/> }/>
-       
+          <Route path="/register" element={<Register/>} />
 
         </Routes>
       </BrowserRouter>
