@@ -1,12 +1,15 @@
 $font-primary: 'Share Tech', sans-serif;
-$bg-color-header: #4F9B65;
+$green-color: #27DB6F;
+$text-white: #E9EAEB;
+$bg-darkblue: #111827;
+
 
 
 footer{
   width: 100%;
   padding: 15px 0px;
-  background-color: #4F9B65;
-  color: white;
+  background-color: $green-color;
+  color: $text-white;
 
   .Container{
     width: 100%;

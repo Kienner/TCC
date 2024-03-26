@@ -1,50 +1,116 @@
+$font-primary: 'Share Tech', sans-serif;
+$green-color: #27DB6F;
+$text-white: #E9EAEB;
+$bg-darkblue: #111827;
+
+
 *{
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
-  overflow-x: hidden;
+
 }
 
 body{
   font-size: 16px;
+  font-family: $font-primary;
+  background-color: $bg-darkblue;
+    overflow-x: hidden;
   
 }
 
 
-$font-primary: 'Share Tech', sans-serif;
-$text-green: #43BF7E;
-$btn-color-green: #43BF7E;
-$text-white: white; 
+
+.CardsSection{
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+
+  .Container{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 40px 0px 60px 0px;
+
+
+    h2{
+      color: $green-color;
+      font-size: 3.5rem;
+    }
+
+    p{
+      font-size: 2rem;
+      padding: 20px;
+    }
+
+
+    .CardsContainer{
+      padding-top: 2rem;
+      width: 100%;
+      display: flex;
+      justify-content: space-evenly;
+
+      .Card{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        img{
+          width: 14rem;
+          padding-left: 3.5rem;
+        }
+
+        h2{
+          font-size: 2.5rem
+        }
+
+        p{
+          color: $text-white;
+          font-size: 1.4rem;
+        }
+      }
+    }
+  }
+ 
+  hr{
+    width: 70%;
+    margin: 0 auto;
+    border: 1px solid #272d3b;
+  }
+}
+
+
 
 .SobreSection{
   font-family: $font-primary;
-  margin-top: 176px;
   width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 150px;
 
   .Container{
+    max-width: 1400px;
     margin: 0 auto;
-    width: 90%;
     display: flex;
-    gap: 30px;
     
-
     .Content{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-start;
       flex: 1;
+
       
       h2{
         font-size: 5rem;
-        margin-bottom: 10px;
-        color: $text-green;
+        color: $green-color;
       }
 
       p{
-        color: black;
+        color: $text-white;
         text-align: left;
+           max-width: 700px;
       }
 
       .TextContainer{
@@ -55,9 +121,9 @@ $text-white: white;
       }
 
       button{
-        background-color: $btn-color-green;
+        border: 1px solid $green-color;
         color: $text-white;
-        border: none;
+        background-color: transparent;
         padding: 20px 60px;
         border-radius: 14px;
         font-size: 1rem;
@@ -69,142 +135,77 @@ $text-white: white;
 
 
     .MidiaContainer{
-      flex: 1;
-      border-radius: 16px;
-      
 
       img{
-        height: 450px;
-        border-radius: 16px;
-      
+        height: 100%;
+        width: 600px;
       }
     }
   }
 }
 
 
+
+
 .GameplaySection{
-  padding-top: 80px;
-  padding-bottom: 80px;
   font-family: $font-primary;
   width: 100%;
-  margin-top: 130px;
-  color: $text-white;
-  background-color: #4F779B;
+  padding-left: 15px;
+  padding-right: 15px;
+  padding-top: 200px;
+  padding-bottom: 50px;
 
   .Container{
-    gap: 30px;
+    max-width: 1400px;
     margin: 0 auto;
-    width: 90%;
     display: flex;
     flex-direction: row-reverse;
-
-
+    
     .Content{
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: flex-end;
       flex: 1;
 
-      .TextContainer{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 10px;
-      }
-
+      
       h2{
         font-size: 5rem;
-        margin-bottom: 10px;
-        color: $text-green;
-      }
-
-      p{
-        font-size: 16px;
+        color: $green-color;
         text-align: right;
       }
 
+      p{
+        color: $text-white;
+        text-align: right;
+        max-width: 700px;
+      }
+
+      .TextContainer{
+        display: flex;
+        align-items: flex-end;
+        flex-direction: column;
+        gap: 20px;
+      }
+
+      button{
+        border: 1px solid $green-color;
+        color: $text-white;
+        background-color: transparent;
+        padding: 20px 60px;
+        border-radius: 14px;
+        font-size: 1rem;
+        margin-top: 15px;
+        cursor: pointer;
+      }
+      
     }
 
 
     .MidiaContainer{
-      flex: 1;
-      border-radius: 16px;
 
       img{
-        height: 450px;
-        border-radius: 16px;
-      
+        height: 100%;
+        width: 600px;
       }
-      
-
     }
   }
 }
-
-
-.PersonagensSection{
-  margin-top: 140px;
-  font-family: $font-primary;
-  width: 100%;
-
-
-  
-  .Container{
-    width: 90%;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-
-    .TextDiv{
-      text-align: center;
-
-      h2{
-        font-size: 5rem;
-        color: #43BF7E;
-      }
-
-      h4{
-        font-size: 3rem;
-      }
-      
-
-    }
-  
-
-    .WrapperPersonagens{
-      margin-top: 5rem;
-      display: grid;
-      grid-template-columns: repeat(4, 1fr);
-    
-      gap: 20px;
-    
-
-      .CardPersonagem{
-        img{
-          width: 400px;
-        }
-      }
-
-    }
-
-
-    
-
-
-  }
-
-
-}
-
-
-
-
-
-
 
 

@@ -5,7 +5,7 @@ import Header from '../Header/Header';
 import Parallax from '../Parallax/Parallax';
 import Banner from '../Banner/Banner';
 import Footer from '../Footer/Footer';
-import Carousel from '../Carousel/Carousel';
+
 
 
 
@@ -19,6 +19,46 @@ function Home() {
       <Header />
   
       <Banner />
+
+
+
+    <section className='CardsSection'>
+      <div className="Container">
+
+        <h2>Explore o passado, crie o futuro</h2>
+        <p>to sem ideia para essa bosta texto</p>
+
+        <div className="CardsContainer">
+          <div className="Card">
+            <img src="\src\assets\img\Player_Attack.gif" alt="" />
+            <h2>Exploração</h2>
+            <p>Lorem ipsum dolor sit amet. Non qui cupiditate, fuga officia porro dolorum, culpa iure maxime</p>
+          </div>
+
+          <div className="Card">
+            <img src="\src\assets\img\Player_Attack.gif" alt="" />
+            <h2>Combate</h2>
+            <p>Lorem ipsum dolor sit amet. Non qui cupiditate, fuga officia porro dolorum, culpa iure maxime</p>
+
+          </div>
+
+          <div className="Card">
+            <img src="\src\assets\img\Player_Attack.gif" alt="" />
+            <h2>Conhecimento</h2>
+            <p>Lorem ipsum dolor sit amet. Non qui cupiditate, fuga officia porro dolorum, culpa iure maxime</p>
+
+
+          </div>
+
+        </div>
+       
+      </div>
+      
+
+      <hr></hr>
+    </section>
+
+
       <section className="SobreSection">
         <div className="Container">
           <div className="Content">
@@ -47,10 +87,13 @@ function Home() {
           </div>
 
           <div className="MidiaContainer">
-            <img src="\src\assets\img\sobre.jpg" />
+            <img src="https://i.pinimg.com/originals/0f/ef/75/0fef753b9dba0220bc67febe84c3a4d7.png" alt="" />
           </div>
         </div>
+
       </section>
+
+
 
       <section className="GameplaySection">
         <div className="Container">
@@ -75,73 +118,26 @@ function Home() {
                 beenindustry. Lorem Ipsum has beenindustry. Lorem Ipsum has been
               </p>
             </div>
+
           </div>
 
           <div className="MidiaContainer">
-            <img src="\src\assets\img\sobre.jpg" />
+            <img src="https://i.pinimg.com/originals/0f/ef/75/0fef753b9dba0220bc67febe84c3a4d7.png" alt="" />
           </div>
         </div>
-      </section>
-
-      <section className='PersonagensSection'>
-        <div className="Container">
-          <div className="TextDiv">
-            <h4>Conheça os</h4>
-            <h2>Personagens</h2>
-          </div>
-
-
-          <div className="WrapperPersonagens">
-
-            <div className="CardPersonagem 1">
-              <img src="\src\assets\img\sobre.jpg" alt="" />
-            </div>
-
-            <div className="CardPersonagem card2">
-              <img src="\src\assets\img\sobre.jpg" alt="" />
-            </div>
-
-            <div className="CardPersonagem card3">
-              <img src="\src\assets\img\sobre.jpg" alt="" />
-            </div>
-
-            <div className="CardPersonagem card4">
-              <img src="\src\assets\img\sobre.jpg" alt="" />
-            </div>
-
-            <div className="CardPersonagem card5">
-              <img src="\src\assets\img\sobre.jpg" alt="" />
-            </div>
-
-            <div className="CardPersonagem card6">
-              <img src="\src\assets\img\sobre.jpg" alt="" />
-            </div>
-
-            <div className="CardPersonagem card7">
-              <img src="\src\assets\img\sobre.jpg" alt="" />
-            </div>
-
-            <div className="CardPersonagem card8">
-              <img src="\src\assets\img\sobre.jpg" alt="" />
-            </div>  
-
-
-            
-          </div>
-
-        </div>
-        
 
       </section>
-  
 
 
 
-      <Parallax />
 
-      <Carousel />
 
-      
+
+
+
+
+
+      {/* <Parallax />*/ }
 
       <Footer />
     </>

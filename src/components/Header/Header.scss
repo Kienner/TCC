@@ -1,13 +1,15 @@
 $font-primary: 'Share Tech', sans-serif;
-$bg-color-header: #4F9B65;
+$green-color: #27DB6F;
+$text-white: #E9EAEB;
+$bg-darkblue: #111827;
 
 
 header{
-  color: white;
+  color: $text-white;
   font-family: $font-primary;
   width: 100%;
   padding: 22px 5px;
-  background-color: $bg-color-header;
+  background-color: $bg-darkblue;
 
     nav{
       width: 100%;
@@ -34,6 +36,15 @@ header{
         li a{
           font-size: 1.4rem;
           color: white;
+          transition: color 0.5s ease;
+          
+        }
+
+       
+
+        li a:hover{
+          color: #27DB6F;
+          
         }
       }
     }
@@ -55,7 +66,7 @@ header{
         padding: 15px 10px;
         border: none;
         color: white;
-        border: 1px solid #ccc;
+        border: 1px solid $green-color;
         border-radius: 14px;
       }
       

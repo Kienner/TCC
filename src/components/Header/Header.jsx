@@ -14,19 +14,19 @@ function Header() {
       
           <ul>
             <li>
-              <a href="">Menu</a>
+              <a href=""><span>M</span>enu</a>
             </li>
             <li>
-              <a href="">Sobre</a>
+              <a href=""><span>S</span>obre</a>
             </li>
             <li>
-              <a href="">Gameplay</a>
+              <a href=""><span>G</span>ameplay</a>
             </li>
             <li>
-              <a href="">Personagens</a>
+              <a href=""><span>P</span>ersonagens</a>
             </li>
             <li>
-              <a href="">Atualizações</a>
+              <a href=""><span>A</span>tualizações</a>
             </li>
 
             <div className="ButtonsDiv">
