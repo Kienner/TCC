@@ -1,58 +1,9 @@
-
-
-form{
-  background-color: #181717;
-  color: white;
-  border-radius: 16px;
-  padding: 10px 10px;
-  margin: 0 auto;
-  width: 35rem;
-  font-size: 1.5rem;
-
-  .Container{
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    padding: 10px;
-   
-    .Box{
-      display: flex;
-      flex-direction: column;
-      gap: 10px;
-    }
-
-      .WrapInputs{
-        display: flex;
-        gap: 20px;
-
-        .BoxTitulo{
-          width: 65%;
-        }
-        
-      }
-
-      input:focus, textarea:focus {
-        outline: none; 
-      }
-      input{
-        border-radius: 16px;
-        border: none;
-        padding: 10px;
-      }
-
-      input[type="date"], #autor{
-        width: 30%;
-      }
-
-      textarea{
-        border: none;
-        border-radius: 16px;
-        padding: 10px;
-        height: 12rem;
-        resize: none;
-        overflow: scroll;
-      }
-
-    
-  }
+h1{
+    color: white;
 }
+
+label{
+    color: white;
+}
+
+
