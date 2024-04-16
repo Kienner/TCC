@@ -6,32 +6,23 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 export function Login() {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [
-    signInWithEmailAndPassword,
-    user,
-    loading,
-    error,
-  ] = useSignInWithEmailAndPassword(auth);
+  const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
-  function handleSignIn(e) {
+  async function handleSignIn(e) {
     e.preventDefault();
-    signInWithEmailAndPassword(email, password)
-      .then((userCredential) => {
-        const user = userCredential.user;
-        console.log("Usuário logado:", user);
-      })
-      .catch((error) => {
-        console.error("Erro ao fazer login:", error.message);
-      });
-  }
-
-  if (loading) {
-    return <p>Carregando...</p>;
-  }
-
-  if (user) {
-    // Redirecionar o usuário para outra página ou executar outra ação
-    return <p>Usuário logado com sucesso!</p>;
+    try {
+      await signInWithEmailAndPassword(email, password);
+     
+      if (user) {
+        window.location.href = '/';
+      } else {
+        console.error("Credenciais inválidas.");
+        
+      }
+    } catch (error) {
+      console.error("Erro ao fazer login:", error.message);
+      
+    }
   }
 
   return (
@@ -68,7 +59,7 @@ export function Login() {
           Entrar
         </button>
       </form>
-      {error && <p>Erro ao fazer login: {error.message}</p>}
+      {error && <p className="error-message">Erro ao fazer login: {error.message}</p>}
     </div>
   );
 }
