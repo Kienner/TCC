@@ -19,7 +19,7 @@ export default class Carousel extends Component {
               {images.map(image => (
                 <motion.div>
                   <img src={image} className='item-img' alt="texto alter"/>
-
+                  
                 </motion.div>
               ))}
 

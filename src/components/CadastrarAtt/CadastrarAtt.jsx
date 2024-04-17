@@ -9,54 +9,62 @@ function CadastrarAtt() {
   const [postText, setPostText] = useState("");
   const [imgURL, setImgURL] = useState("");
   const [progress, setProgress] = useState(0);
+  const [imageFile, setImageFile] = useState(null);
+  const navigate = useNavigate();
 
-  const handleUpload = async (event) => {
-    event.preventDefault();
-    const files = event.target[2]?.files;
-    if (!files || files.length === 0) return;
-    const file = files[0];
-    const storageRef = ref(storage, `images/${file.name}`);
-    const uploadTask = uploadBytesResumable(storageRef, file);
+  const handleFileChange = (event) => {
+    const file = event.target.files[0];
+    setImageFile(file);
+
+    // Exibir prévia da imagem
+    const reader = new FileReader();
+    reader.onload = () => {
+      setImgURL(reader.result);
+    };
+    reader.readAsDataURL(file);
+  };
+
+  const handleUploadAndCreatePost = async () => {
+    if (!imageFile) return;
+
+    const storageRef = ref(storage, `images/${imageFile.name}`);
+    const uploadTask = uploadBytesResumable(storageRef, imageFile);
+
     uploadTask.on(
       "state_changed",
-      snapshot => {
+      (snapshot) => {
         const progress = (snapshot.bytesTransferred / snapshot.totalBytes) * 100;
         setProgress(progress);
       },
-      error => {
+      (error) => {
         alert(error);
       },
-      () => {
-        getDownloadURL(uploadTask.snapshot.ref).then(url => {
-          setImgURL(url);
-        });
+      async () => {
+        try {
+          // Obtém a URL da imagem após o upload
+          const url = await getDownloadURL(uploadTask.snapshot.ref);
+
+          // Cria o post no Firestore com a URL da imagem
+          const docRef = await addDoc(collection(db, "posts"), {
+            title,
+            postText,
+            imageUrl: url,
+            author: { name: auth.currentUser.email, id: auth.currentUser.uid }
+          });
+          console.log("Post criado com ID:", docRef.id);
+
+          // Redireciona após criar o post
+          navigate("/");
+        } catch (error) {
+          console.error("Erro ao criar post:", error);
+        }
       }
     );
   };
 
-  const postsCollectionRef = collection(db, "posts");
-  const navigate = useNavigate();
-
   const handleSubmit = async (event) => {
     event.preventDefault();
-    await handleUpload(event);
-    await createPost();
-  };
-
-  const createPost = async () => {
-    if (auth.currentUser) {
-      await addDoc(postsCollectionRef, {
-        title,
-        postText,
-        imgURL, // Incluindo o URL da imagem no documento do post
-        author: { name: auth.currentUser.email, id: auth.currentUser.uid }
-      });
-      // Navega para a página inicial após a criação do post
-      navigate("/");
-    } else {
-      // Usuário não autenticado, redireciona para a página de login
-      navigate("/login");
-    }
+    await handleUploadAndCreatePost();
   };
 
   return (
@@ -74,13 +82,13 @@ function CadastrarAtt() {
           </div>
           <div className="InputSingle">
             <label htmlFor="imagem">Imagem</label>
-            <input type='file' />
+            <input type='file' onChange={handleFileChange} />
           </div>
+          {imgURL && <img src={imgURL} alt='imagem' style={{ maxWidth: "100px" }} />}
           <button type='submit'>Publicar</button>
         </div>
       </form>
-      {!imgURL && <progress value={progress} max="100" />}
-      {imgURL && <img src={imgURL} alt='imagem' />}
+      {progress > 0 && progress < 100 && <progress value={progress} max="100" />}
     </div>
   );
 }

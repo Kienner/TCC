@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../../services/firebaseConfig';
+import { Navigate, useNavigate } from "react-router-dom";
 
 export function Register() {
   const [email, setEmail] = useState("");
@@ -10,6 +11,7 @@ export function Register() {
   const [birthdate, setBirthdate] = useState("");
   const [messageType, setMessageType] = useState(null);
   const [messageText, setMessageText] = useState("");
+  const navigate = useNavigate();
 
   async function handleSignUp(e) {
     e.preventDefault();
@@ -29,6 +31,7 @@ export function Register() {
 
       setMessageType('success');
       setMessageText("Cadastro realizado com sucesso!");
+      navigate("/Login")
     } catch (error) {
       console.error(error);
       setMessageType('error');
