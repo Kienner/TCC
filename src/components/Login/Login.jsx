@@ -14,7 +14,7 @@ export function Login() {
       await signInWithEmailAndPassword(email, password);
      
       if (user) {
-        window.location.href = '/';
+        window.location.href = '/home';
       } else {
         console.error("Credenciais inválidas.");
         

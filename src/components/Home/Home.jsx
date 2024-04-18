@@ -4,7 +4,6 @@ import './Home.scss';
 import Header from '../Header/Header';
 import Parallax from '../Parallax/Parallax';
 import Banner from '../Banner/Banner';
-import Carousel from '../Carousel/Carousel';
 import Footer from '../Footer/Footer';
 
 
