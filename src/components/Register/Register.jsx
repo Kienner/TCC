@@ -3,6 +3,7 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../../services/firebaseConfig';
 import { Navigate, useNavigate } from "react-router-dom";
+import Header from '../Header/Header';
 
 export function Register() {
   const [email, setEmail] = useState("");
@@ -44,11 +45,9 @@ export function Register() {
   }
   
   return (
+    <>
+     <Header/>
     <div className="container">
-      <header className="header">
-        <img src="/src/assets/img/logo.png" alt="logo" className='LogoImg'/>
-        <span> Digite suas informações</span>
-      </header>
 
       <form>
         <div className="inputContainer">
@@ -108,7 +107,10 @@ export function Register() {
         )}
       </form>
     </div>
+
+    </>
   );
+  
 }
 
 export default Register;

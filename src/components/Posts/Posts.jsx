@@ -1,9 +1,14 @@
 import React, { useEffect, useState } from 'react';
+import Header from '../Header/Header';
+import { Link } from 'react-router-dom';
 import './Posts.scss';
 import { getDocs, collection } from 'firebase/firestore';
 import { db } from '../../services/firebaseConfig';
+import './Posts.scss';
+
 
 const Posts = () => {
+
   const [postLists, setPostsList] = useState([]);
 
   useEffect(() => {
@@ -14,8 +19,9 @@ const Posts = () => {
         const postsData = querySnapshot.docs.map(doc => ({
           id: doc.id,
           title: doc.data().title,
-          postText: doc.data().postText,
-          imageUrl: doc.data().imageUrl // Assumindo que imageUrl é o campo onde está armazenado o URL da imagem
+          postText: doc.data().postText, 
+          imageUrl: doc.data().imageUrl,
+          summary: doc.data().summary // Adicionando o resumo
         }));
         setPostsList(postsData);
       } catch (error) {
@@ -27,25 +33,24 @@ const Posts = () => {
   }, []);
 
   return (    
-    <div>
+
+    <>
+    <Header/>
+    
+    <div className='WrapperPosts'>
       {postLists.map(post => (
-        <div className='PostContainer' key={post.id}>
-          <div className="Post">
-            <div className='title'>
-              <h1>{post.title}</h1>
-            </div>
-            <div>   
-              <p>{post.postText}</p>
-            </div>
-            {post.imageUrl && (
-              <div className="image">
-                <img src={post.imageUrl} alt="Imagem do post" />
-              </div>
-            )}
-          </div>
-        </div>
+        <Link to={`/single-post/${post.id}`} className="Post" key={post.id}>
+          {post.imageUrl && (
+              <img src={post.imageUrl} alt="Imagem do post" />
+          )}
+          <h2>{post.title}</h2>
+          <p>{post.summary}</p> 
+         
+        </Link>
       ))}
     </div>
+
+    </>
   );
 };
 
