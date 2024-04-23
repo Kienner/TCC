@@ -4,26 +4,8 @@ import './Home.scss';
 import Header from '../Header/Header';
 import Parallax from '../Parallax/Parallax';
 import Banner from '../Banner/Banner';
-import Carousel from '../Carousel/Carousel';
 import Footer from '../Footer/Footer';
 
-
-{/* 
- import {Swiper, SwiperSlide} from "swiper";
-
-import 'swiper/css/';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/navigation';
-
-
-import { EffectCoverflow,Pagination,Navigation } from 'swiper';
-
-import slide_image_1  from "./src/assets/images/carouselimg1.jpg";
-import slide_image_2 from "./src/assets/images/carouselimg2.jpg";
-import slide_image_3  from "./src/assets/images/carouselimg3.jpg";
-
-
-*/}
 
 function Home() {
  
@@ -72,7 +54,7 @@ function Home() {
     </section>
 
 
-      <section className="SobreSection">
+      <section className="SobreSection" id="Sobre">
         <div className="Container">
           <div className="Content">
             <h2>Sobre o game</h2>
@@ -109,7 +91,7 @@ function Home() {
 
 
 
-      <section className="GameplaySection">
+      <section className="GameplaySection" id="Gameplay">
         <div className="Container">
           <div className="Content">
             <h2>Gameplay</h2>

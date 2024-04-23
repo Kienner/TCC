@@ -10,6 +10,7 @@ export function Register() {
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [birthdate, setBirthdate] = useState("");
+  const [permissionLevel, setPermissionLevel] = useState(0); // Nível de permissão padrão definido como 0 (usuário)
   const [messageType, setMessageType] = useState(null);
   const [messageText, setMessageText] = useState("");
   const navigate = useNavigate();
@@ -25,9 +26,12 @@ export function Register() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      await setDoc(doc(db, 'users', user.uid), {
+      // Definindo o nível de permissão com base na seleção do usuário
+      const userDocRef = doc(db, 'users', user.uid);
+      await setDoc(userDocRef, {
         name: name,
-        birthdate: birthdate
+        birthdate: birthdate,
+        permissionLevel: parseInt(permissionLevel) // Convertendo para número inteiro
       });
 
       setMessageType('success');
@@ -95,6 +99,19 @@ export function Register() {
             value={password}
             onChange={e => setPassword(e.target.value)}
           />
+        </div>
+
+        <div className="inputContainer">
+          <label htmlFor="permission">Permissão</label>
+          <select
+            id="permission"
+            name="permission"
+            value={permissionLevel}
+            onChange={e => setPermissionLevel(parseInt(e.target.value))}
+          >
+            <option value={0}>Usuário</option>
+            <option value={1}>Admin</option>
+          </select>
         </div>
         
         <button className="button" onClick={handleSignUp}>
