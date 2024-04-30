@@ -1,76 +1,147 @@
-body.login-page{
-    background-color: green;
-    font-family: Arial, Helvetica, sans-serif;
-    overflow: hidden;
+$font-primary: 'Share Tech', sans-serif;
+$green-color: #27DB6F;
+$green-colorv2: #52df8a;
+$text-white: #E9EAEB;
+$text-whitev2: #c5c8cb;
+$bg-darkblue: #111827;
+$bg-darkbluev2: #1A2743;
+$bg-darkbluev3:#414E6A;
+
+body {
+    margin: 0;
 }
 
-.area-login{
-    display: flex;
-    justify-content: center;
-    align-items: center;
+body * {
+    box-sizing: border-box;
+}
+
+.main-login{
+    width: 100vw;
     height: 100vh;
+    background:$bg-darkblue;
+    display: flex;
     justify-content: center;
     align-items: center;
-    }
-
-.login{
-    display: flex;
-    flex-direction: column;
-    border-radius: 14px;
-    background-color: #4F9B65;
-    width: 395px;
-    height:480px;
-    padding: 30px;
 
 }
 
-.login form{
+.left-login{
+    width: 50vw;
+    display: 100vh;
     display: flex;
+    justify-content: center;
+    align-items: center;
     flex-direction: column;
-    width: 100%;
-    background-color:#4F9B65;
 }
 
-.login input{
-    margin-top: 40px;
-    background-color: #FFFFFF;
-    color: black;
-    border: none;
-    height: 50px;
-    outline: none;
-    border-radius: 14px ;
-
+.left-login > h1 {
+    
+    color:$green-color;
+}
+.left-gif{
+    width: 25vw;
     
 }
 
-.login img{
-    width: 400px;
-    height: auto;
+.right-login{
+    width: 50vw;
+    display: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
-.input::placeholder{
-    color: black;
-    font-size: 14px;
-    padding-left: 10px;
+.card-login{
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: $bg-darkbluev2;
+    border-radius: 14px;
+    box-shadow: 0px 10px 40px #16191F;
 }
 
-form [type="submit"]{
-    display: block;
-    background-color: #5BE558;
-    font-size: 18px;
+.card-login > h1 {
+    color: $green-color ;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textfield{
+    width: 100% ;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: $bg-darkbluev3;
+    color:$text-white ;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #16191F;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > label {
+    color:$text-white;
+    margin-bottom: 10px;
+}
+
+.textfield > input::placeholder{
+    color: $text-whitev2;
+}
+
+.btn-login{
+    width: 80% ;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
     text-transform: uppercase;
-    font-weight: bold;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background-color:$green-color;
+    color: $bg-darkblue;
     cursor: pointer;
+    box-shadow: 0px 10px 20px -17px $green-colorv2;
 }
 
-p{
-    text-align: center;
-    color:  white;
+@media only screen and (max-width:950px){
+.card-login{
+    width: 85%;
+}
 }
 
-a{
-    color:black ;
-    text-decoration: none;
-    margin-left: 10px;
-}
+@media only screen and (max-width:600px){
+   .main-login{
+    flex-direction: column;
+   }
+   .left-login > h1 {
+    display: none;
+   }
+   .left-login{
+    width: 100%;
+    height: auto;
+   }
+   .right-login{
+    width: 100%;
+    height: auto;
+   }
+   .left-gif{
+    width:50vw ;
+   }
 
+   .card-login{
+    width: 90% ;
+   }
+}

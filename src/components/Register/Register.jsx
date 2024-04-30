@@ -3,14 +3,14 @@ import { createUserWithEmailAndPassword } from 'firebase/auth';
 import { doc, setDoc } from 'firebase/firestore';
 import { auth, db } from '../../services/firebaseConfig';
 import { Navigate, useNavigate } from "react-router-dom";
-import Header from '../Header/Header';
+import './register.scss'; // Renomeei o arquivo para Register.scss
 
-export function Register() {
+export function CustomRegister() { // Renomeei a função para CustomRegister
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [name, setName] = useState("");
   const [birthdate, setBirthdate] = useState("");
-  const [permissionLevel, setPermissionLevel] = useState(0); // Nível de permissão padrão definido como 0 (usuário)
+  const [permissionLevel, setPermissionLevel] = useState(0);
   const [messageType, setMessageType] = useState(null);
   const [messageText, setMessageText] = useState("");
   const navigate = useNavigate();
@@ -26,12 +26,11 @@ export function Register() {
       const userCredential = await createUserWithEmailAndPassword(auth, email, password);
       const user = userCredential.user;
 
-      // Definindo o nível de permissão com base na seleção do usuário
       const userDocRef = doc(db, 'users', user.uid);
       await setDoc(userDocRef, {
         name: name,
         birthdate: birthdate,
-        permissionLevel: parseInt(permissionLevel) // Convertendo para número inteiro
+        permissionLevel: parseInt(permissionLevel)
       });
 
       setMessageType('success');
@@ -50,84 +49,78 @@ export function Register() {
   
   return (
     <>
-     <Header/>
-    <div className="container">
+    <div className="main-register"> {/* Renomeei a classe para main-register */}
+      <div className="left-register">
+        <h1>Crie uma conta e junte-se ao Brasil Time Odssey</h1>
+        {/* Adicionei a imagem de animação */}
+        <img src="\src\assets\img\Player_Attack.gif" className="left-gif" alt="animação ataque" />
+      </div>
 
-      <form>
-        <div className="inputContainer">
-          <label htmlFor="name">Nome</label>
-          <input
-            type="text"
-            name='name'
-            id='name'
-            placeholder='Seu nome completo'
-            value={name}
-            onChange={e => setName(e.target.value)}
-          />
-        </div>
+      <div className="right-register">
+        <div className="card-register">
+          <h1>REGISTRO</h1>
+          <form>
+            <div className="textfield">
+              <label htmlFor="name">Nome</label>
+              <input
+                type="text"
+                name='name'
+                id='name'
+                placeholder='Seu nome completo'
+                value={name}
+                onChange={e => setName(e.target.value)}
+              />
+            </div>
 
-        <div className="inputContainer">
-          <label htmlFor="birthdate">Data de Nascimento</label>
-          <input
-            type="date"
-            name='birthdate'
-            id='birthdate'
-            value={birthdate}
-            onChange={e => setBirthdate(e.target.value)}
-          />
-        </div>
+            <div className="textfield">
+              <label htmlFor="birthdate">Data de Nascimento</label>
+              <input
+                type="date"
+                name='birthdate'
+                id='birthdate'
+                value={birthdate}
+                onChange={e => setBirthdate(e.target.value)}
+              />
+            </div>
 
-        <div className="inputContainer">
-          <label htmlFor="email">E-mail</label>
-          <input
-            type="text"
-            name='email'
-            id='email'
-            placeholder='calabreso@gmail.com'
-            value={email}
-            onChange={e => setEmail(e.target.value)}
-          />
-        </div>
+            <div className="textfield">
+              <label htmlFor="email">E-mail</label>
+              <input
+                type="text"
+                name='email'
+                id='email'
+                placeholder='seuemail@example.com'
+                value={email}
+                onChange={e => setEmail(e.target.value)}
+              />
+            </div>
 
-        <div className="inputContainer">
-          <label htmlFor="senha">Senha</label>
-          <input
-            type="password"
-            name='password'
-            id='password'
-            placeholder='*****'
-            value={password}
-            onChange={e => setPassword(e.target.value)}
-          />
-        </div>
+            <div className="textfield">
+              <label htmlFor="password">Senha</label>
+              <input
+                type="password"
+                name='password'
+                id='password'
+                placeholder='*****'
+                value={password}
+                onChange={e => setPassword(e.target.value)}
+              />
+            </div>
 
-        <div className="inputContainer">
-          <label htmlFor="permission">Permissão</label>
-          <select
-            id="permission"
-            name="permission"
-            value={permissionLevel}
-            onChange={e => setPermissionLevel(parseInt(e.target.value))}
-          >
-            <option value={0}>Usuário</option>
-            <option value={1}>Admin</option>
-          </select>
+            <button className="btn-register" onClick={handleSignUp}> {/* Adaptei a classe do botão para btn-register */}
+              Cadastrar
+            </button>
+          </form>
         </div>
-        
-        <button className="button" onClick={handleSignUp}>
-          Cadastrar
-        </button>
-        {messageType && (
-          <p className={messageType === 'error' ? 'error-message' : 'success-message'}>
-            {messageText}
-          </p>
-        )}
-      </form>
+      </div>
+      {messageType && (
+        <p className={messageType === 'error' ? 'error-message' : 'success-message'}>
+          {messageText}
+        </p>
+      )}
     </div>
-
     </>
   );
-  
 }
 
-export default Register;
+export default CustomRegister; // Renomeei a exportação para CustomRegister e removi a exportação padrão
