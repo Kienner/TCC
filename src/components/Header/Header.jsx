@@ -49,7 +49,7 @@ function Header() {
           </li>
 
           <li>
-            <a href="/atualizacao"><span>A</span>tualizações </a>
+            <a href="/Posts"><span>N</span>oticias </a>
           </li>
 
           {/* Exibe o link "Cadastrar atualizações" apenas se o usuário for um administrador */}

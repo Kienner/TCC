@@ -17,15 +17,26 @@ body{
   font-family: $font-primary;
   background-color: $bg-darkblue;
     overflow-x: hidden;
+    
   
 }
+/*hr{
+  width: 80%;
+  margin: 0 auto;
+  border: 1px solid #272d3b;
+}
+*/
+
+hr{
+  display: none;
+}
+
 
 
 
 .CardsSection{
   width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-bottom: 70px;
 
   .Container{
     display: flex;
@@ -52,6 +63,7 @@ body{
       padding-top: 2rem;
       width: 100%;
       display: flex;
+      gap: 20px;
       justify-content: space-evenly;
 
       .Card{
@@ -59,6 +71,8 @@ body{
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        padding: 10px 10px;
+        border: 1px solid #27DB6F;
 
         img{
           width: 14rem;
@@ -77,13 +91,13 @@ body{
     }
   }
  
-  hr{
-    width: 70%;
-    margin: 0 auto;
-    border: 1px solid #272d3b;
-  }
+  
 }
 
+
+
+
+/*
 
 
 .SobreSection{
@@ -151,9 +165,77 @@ body{
   }
 }
 
+*/
+
+.SobreSection{
+  padding-top: 50px;
+  color: white;
+  width: 100%;
+  padding-bottom: 70px;
+
+  .Wrapper{
+    position: relative;
+    display: flex;
+    flex-direction: column;
+
+    .Description{
+      width: 100%;
+      background-color:$green-color;
+      width: 40rem;
+      height: 10rem;
+      position: absolute;
+      top: 19rem;
+      left: 52%;
+
+      p{
+        padding: 10px;
+        font-size: 300;
+        font-size: 1.5rem;
+        text-align: left;
+      }
+      
+      
+     
+
+
+    }
+
+    .Container{
+      margin: 0 auto;
+      max-width: 1400px;
+      display: grid;
+      gap: 22px;
+      grid-template-columns: repeat(3, 30% 25% 40% );
+
+
+      h2{
+        font-weight: normal;
+        font-size: 5rem;
+        color: $text-white;
+        
+        span{
+          color: $green-color;
+          font-weight: 600;
+        }
+      }
+
+      img{
+        width: 100%;
+        height: 100%;
+      }
+    }
 
 
 
+  }
+
+
+   
+  }
+
+
+
+  /*
 .GameplaySection{
   font-family: $font-primary;
   width: 100%;
@@ -217,4 +299,84 @@ body{
  
 }
 
+*/
 
+
+
+
+
+.SectionGameplay{
+  width: 100%;
+  padding: 220px 10px;
+
+
+  .Container{
+    margin:  0 auto;
+    display: grid;
+    padding: 10px;
+    gap: 6rem;
+    max-width: 1400px;
+    grid-template-columns: repeat(2,1fr);
+    
+    .Content{
+      order: 2;
+      display: flex;
+      flex-direction: column;
+      
+
+      .TitleDiv{
+
+        h2{
+          font-size: 5rem;
+          font-weight: normal;
+          color: $green-color;
+        }
+
+        span{
+          color: $text-white;
+        }
+        
+      }
+
+      .CardsDiv{
+        padding-top: 3.5rem;
+        display: grid;
+        grid-template-columns: repeat(2,200px);
+        gap: 40px;
+
+
+        .Card{
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          align-items: flex-start;
+
+
+          h4{
+            font-size: 1.5rem;
+            color: $green-color;
+          
+          }
+        
+        }
+      }
+    }
+
+  }
+
+
+  .WrapperMidia{
+ 
+
+    img{
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+
+  .icon{
+    color: $text-white;
+    font-size: 4rem;
+  }
+}

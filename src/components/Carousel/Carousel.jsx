@@ -24,7 +24,7 @@ export default class Carousel extends Component {
               ))}
 
 
-
+              
 
             </motion.div>
 
