@@ -1,0 +1,145 @@
+$font-primary: 'Share Tech', sans-serif;
+$green-color: #27DB6F;
+$green-colorv2: #52df8a;
+$text-white: #E9EAEB;
+$text-whitev2: #c5c8cb;
+$bg-darkblue: #111827;
+$bg-darkbluev2: #1A2743;
+$bg-darkbluev3: #414E6A;
+
+body {
+    margin: 0;
+}
+
+body * {
+    box-sizing: border-box;
+}
+
+.main-register { /* Renomeei a classe para main-register */
+    width: 100vw;
+    height: 100vh;
+    background: $bg-darkblue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.left-register { /* Renomeei a classe para left-register */
+    width: 50vw;
+    display: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.left-register > h1 {
+    color: $green-color;
+}
+
+.left-gif {
+    width: 25vw;
+}
+
+.right-register { /* Renomeei a classe para right-register */
+    width: 50vw;
+    display: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-register { /* Renomeei a classe para card-register */
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 30px 35px;
+    background: $bg-darkbluev2;
+    border-radius: 14px;
+    box-shadow: 0px 10px 40px #16191F;
+}
+
+.card-register > h1 { /* Renomeei a classe para card-register */
+    color: $green-color;
+    font-weight: 800;
+    margin: 0;
+}
+
+.textfield {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    margin: 10px 0px;
+}
+
+.textfield > input {
+    width: 100%;
+    border: none;
+    border-radius: 10px;
+    padding: 15px;
+    background: $bg-darkbluev3;
+    color: $text-white;
+    font-size: 12pt;
+    box-shadow: 0px 10px 40px #16191F;
+    outline: none;
+    box-sizing: border-box;
+}
+
+.textfield > label {
+    color: $text-white;
+    margin-bottom: 10px;
+}
+
+.textfield > input::placeholder {
+    color: $text-whitev2;
+}
+
+.btn-register { /* Adaptei a classe do botão para btn-register */
+    width: 80%;
+    padding: 16px 0px;
+    margin: 25px;
+    border: none;
+    border-radius: 8px;
+    outline: none;
+    text-transform: uppercase;
+    font-weight: 800;
+    letter-spacing: 2px;
+    background-color: $green-color;
+    color: $bg-darkblue;
+    cursor: pointer;
+    box-shadow: 0px 10px 20px -17px $green-colorv2;
+}
+
+@media only screen and (max-width: 950px) {
+    .card-register { /* Renomeei a classe para card-register */
+        width: 85%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .main-register {
+        flex-direction: column;
+    }
+    .left-register > h1 {
+        display: none;
+    }
+    .left-register {
+        width: 100%;
+        height: auto;
+    }
+    .right-register {
+        width: 100%;
+        height: auto;
+    }
+    .left-gif {
+        width: 50vw;
+    }
+
+    .card-register { /* Renomeei a classe para card-register */
+        width: 90%;
+    }
+}

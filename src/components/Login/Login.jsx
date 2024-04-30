@@ -14,51 +14,57 @@ export function Login() {
       await signInWithEmailAndPassword(email, password);
      
       if (user) {
-        window.location.href = '/home';
+        window.location.href = '/';
       } else {
         console.error("Credenciais inválidas.");
-        
       }
     } catch (error) {
       console.error("Erro ao fazer login:", error.message);
-      
     }
   }
 
   return (
-    <div className="container">
-      <header className="header">
-        <img src="/src/assets/img/logo.png" alt="logo" className='LogoImg'/>
-        <span> Digite suas informações</span>
-      </header>
+    <div className="main-login">
+      <div className="left-login">
+      <h1> <br />  Faça login <br /> e adentre o universo de Brasil Time Odssey</h1>
+       
 
-      <form>
-        <div className="inputContainer">
-          <label htmlFor="email">E-mail</label>
-          <input
-            type="text"
-            name='email'
-            id='email'
-            placeholder='calabreso@gmail.com'
-            onChange={e => setEmail(e.target.value)}
-          />
-        </div>
+       <img src="\src\assets\img\Player_Attack.gif" class="left-gif" alt="animação ataque" />
 
-        <div className="inputContainer">
-          <label htmlFor="senha">Senha</label>
-          <input
-            type="password"
-            name='password'
-            id='password'
-            placeholder='*****'
-            onChange={e => setPassword(e.target.value)}
-          />
+      </div>
+
+      <div className="right-login">
+        <div className="card-login">
+          <h1>LOGIN</h1>
+          <form>
+            <div className="textfield">
+              <label htmlFor="email">E-mail</label>
+              <input
+                type="text"
+                name='email'
+                id='email'
+                placeholder='calabreso@gmail.com'
+                onChange={e => setEmail(e.target.value)}
+              />
+            </div>
+
+            <div className="textfield">
+              <label htmlFor="senha">Senha</label>
+              <input
+                type="password"
+                name='password'
+                id='password'
+                placeholder='*****'
+                onChange={e => setPassword(e.target.value)}
+              />
+            </div>
+            
+            <button className="btn-login" onClick={handleSignIn}>
+              Entrar
+            </button>
+          </form>
         </div>
-        
-        <button className="button" onClick={handleSignIn}>
-          Entrar
-        </button>
-      </form>
+      </div>
       {error && <p className="error-message">Erro ao fazer login: {error.message}</p>}
     </div>
   );
