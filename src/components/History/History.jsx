@@ -5,7 +5,8 @@ export default class History extends Component {
   render() {
     return (
       <div>
-        teste
+        
+
 
         
       </div>

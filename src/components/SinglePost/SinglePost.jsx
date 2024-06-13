@@ -38,11 +38,7 @@ const SinglePost = () => {
 
   return (
     <div className='WrapperSinglePost'>
-       {post.imageUrl && (
-        <div className="image">
-          <img src={post.imageUrl} alt="Imagem do post"/>
-        </div>
-      )}
+     
 
       <div className="Post">
      
@@ -51,6 +47,7 @@ const SinglePost = () => {
        
 
       </div>
+      
       
      
     </div>

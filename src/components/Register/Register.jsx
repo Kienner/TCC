@@ -51,9 +51,10 @@ export function CustomRegister() { // Renomeei a função para CustomRegister
     <>
     <div className="main-register"> {/* Renomeei a classe para main-register */}
       <div className="left-register">
-        <h1>Crie uma conta e junte-se ao Brasil Time Odssey</h1>
+     
         {/* Adicionei a imagem de animação */}
-        <img src="\src\assets\img\Player_Attack.gif" className="left-gif" alt="animação ataque" />
+        <img src="\logo.png" className="left-gif" alt="animação ataque" />
+      
       </div>
 
       <div className="right-register">

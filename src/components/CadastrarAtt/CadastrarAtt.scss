@@ -1,9 +1,113 @@
-h1{
-    color: white;
+// CadastrarAtt.scss
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
+$font-primary: 'Share Tech', sans-serif;
+$green-color: #27DB6F;
+$green-colorv2: #52df8a;
+$text-white: #E9EAEB;
+$text-whitev2: #c5c8cb;
+$bg-darkblue: #111827;
+$bg-darkbluev2: #1A2743;
+$bg-darkbluev3: #414E6A;
+
+body {
+  margin: 0;
+  font-family: $font-primary;
 }
 
-label{
-    color: white;
+body * {
+  box-sizing: border-box;
 }
 
+.main-cadastrar {
+  width: 100vw;
+  height: 100vh;
+  background: $bg-darkblue;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 
+.card-cadastrar {
+  width: 60%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 30px 35px;
+  background: $bg-darkbluev2;
+  border-radius: 14px;
+  box-shadow: 0px 10px 40px #16191F;
+}
+
+.card-cadastrar > h1 {
+  color: $green-color;
+  font-weight: 800;
+  margin: 0 0 20px 0;
+}
+
+.inputs-container {
+  width: 100%;
+}
+
+.input-single {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin: 10px 0px;
+}
+
+.input-single > label {
+  color: $text-white;
+  margin-bottom: 10px;
+}
+
+.input-single > input,
+.input-single > textarea {
+  width: 100%;
+  border: none;
+  border-radius: 10px;
+  padding: 15px;
+  background: $bg-darkbluev3;
+  color: $text-white;
+  font-size: 12pt;
+  box-shadow: 0px 10px 40px #16191F;
+  outline: none;
+}
+
+.input-single > input::placeholder,
+.input-single > textarea::placeholder {
+  color: $text-whitev2;
+}
+
+.button-submit {
+  width: 80%;
+  padding: 16px 0px;
+  margin: 25px;
+  border: none;
+  border-radius: 8px;
+  outline: none;
+  text-transform: uppercase;
+  font-weight: 800;
+  letter-spacing: 2px;
+  background-color: $green-color;
+  color: $bg-darkblue;
+  cursor: pointer;
+  box-shadow: 0px 10px 20px -17px $green-colorv2;
+}
+
+@media only screen and (max-width: 950px) {
+  .card-cadastrar {
+    width: 85%;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .main-cadastrar {
+    flex-direction: column;
+  }
+
+  .card-cadastrar {
+    width: 90%;
+  }
+}

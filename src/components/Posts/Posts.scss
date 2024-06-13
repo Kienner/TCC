@@ -1,45 +1,95 @@
+@import url('https://fonts.googleapis.com/css2?family=Share+Tech&display=swap');
+
 $font-primary: 'Share Tech', sans-serif;
 $green-color: #27DB6F;
+$green-colorv2: #52df8a;
 $text-white: #E9EAEB;
+$text-whitev2: #c5c8cb;
 $bg-darkblue: #111827;
+$bg-darkbluev2: #1A2743;
+$bg-darkbluev3: #414E6A;
 
-
-body{
-    box-sizing: border-box;
-    font-size: 16px;
+body {
+  margin: 0;
+  font-family: $font-primary;
 }
 
+body * {
+  box-sizing: border-box;
+}
 
-.WrapperPosts{
-    margin: 0 auto;
-    padding-top: 100px;
-    width: 80%;
-    display: grid;
-    row-gap: 40px;
-    column-gap: 20px;
-    grid-template-columns: repeat(3, 1fr);
+.WrapperPosts {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  background: $bg-darkblue;
+  padding: 20px;
+}
 
+.Post {
+  width: 400px;
+  margin: 20px;
+  background: $bg-darkbluev2;
+  border-radius: 14px;
+  box-shadow: 0px 10px 40px #16191F;
+  text-decoration: none;
+  color: $text-white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: transform 0.3s ease;
+  height: 450px; /* Define a altura fixa do card */
+}
 
-        .Post{
-            align-items: center;
-            display: flex;
-            flex-direction: column;
-            border: 1px solid $green-color;
+.Post:hover {
+  transform: scale(1.05);
+}
 
-            h2{
-                color: $green-color ;
-                font-size: 32px;
-            }
+.Post img {
+  width: 100%;
+  height: 200px;
+  border-top-left-radius: 14px;
+  border-top-right-radius: 14px;
+  border-bottom-left-radius: 0px;
+  border-bottom-right-radius:  0px;
+  object-fit: cover;
+}
 
-            img{
-                width: 100%;
-                height: 15rem;
-            }
+.Post h2 {
+  color: $green-color;
+  font-weight: 800;
+  margin: 15px 0 10px;
+  text-align: center;
+  min-height: 50px; 
+}
 
-            p{
-                font-size: 22px;
-                max-width: 100%;
-                padding: 10px;
-            }
-        }
+.Post p {
+  color: $text-whitev2;
+  padding: 0 15px 15px;
+  text-align: center;
+  flex-grow: 1; 
+  font-size: 1.5rem;
+}
+
+.Post span {
+  margin-bottom: 15px; 
+  font-size: 25px;
+}
+
+@media only screen and (max-width: 600px) {
+  .WrapperPosts {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .Post {
+    width: 90%;
+    margin: 10px 0;
+    height: auto; 
+  }
+
+  .Post img {
+    height: auto; 
+  }
 }

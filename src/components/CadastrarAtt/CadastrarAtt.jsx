@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { ref, uploadBytesResumable, getDownloadURL } from 'firebase/storage';
 import { addDoc, collection } from 'firebase/firestore';
@@ -6,10 +5,9 @@ import { db, auth, storage } from '../../services/firebaseConfig';
 import { useNavigate } from "react-router-dom";
 import './CadastrarAtt.scss';
 
-
 function CadastrarAtt() {
   const [title, setTitle] = useState("");
-  const [summary, setSummary] = useState(""); // Adicionando estado para o resumo
+  const [summary, setSummary] = useState("");
   const [postText, setPostText] = useState("");
   const [imgURL, setImgURL] = useState("");
   const [progress, setProgress] = useState(0);
@@ -20,7 +18,6 @@ function CadastrarAtt() {
     const file = event.target.files[0];
     setImageFile(file);
 
-    // Exibir prévia da imagem
     const reader = new FileReader();
     reader.onload = () => {
       setImgURL(reader.result);
@@ -29,8 +26,7 @@ function CadastrarAtt() {
   };
 
   const handleSummaryChange = (event) => {
-    // Limitar a quantidade de caracteres
-    const maxLength = 80; // Defina o limite máximo de caracteres
+    const maxLength = 80;
     if (event.target.value.length <= maxLength) {
       setSummary(event.target.value);
     }
@@ -53,20 +49,17 @@ function CadastrarAtt() {
       },
       async () => {
         try {
-          // Obtém a URL da imagem após o upload
           const url = await getDownloadURL(uploadTask.snapshot.ref);
 
-          // Cria o post no Firestore com a URL da imagem e o resumo
           const docRef = await addDoc(collection(db, "posts"), {
             title,
-            summary, // Adicionando o resumo
+            summary,
             postText,
             imageUrl: url,
             author: { name: auth.currentUser.email, id: auth.currentUser.uid }
           });
           console.log("Post criado com ID:", docRef.id);
 
-          // Redireciona após criar o post
           navigate("/posts");
         } catch (error) {
           console.error("Erro ao criar post:", error);
@@ -81,35 +74,38 @@ function CadastrarAtt() {
   };
 
   return (
-    <div>
-      <h1>Patch Notes Brazil Time Odyssey</h1>
-      <form onSubmit={handleSubmit}>
-        <div className="InputsContainer">
-          <div className="InputSingle">
-            <label htmlFor="titulo">Título da Patch Notes</label>
-            <input type="text" onChange={(event) => setTitle(event.target.value)} />
+    <div className="main-cadastrar">
+      <div className="card-cadastrar">
+        <h1>Patch Notes Brazil Time Odyssey</h1>
+        <form onSubmit={handleSubmit}>
+          <div className="inputs-container">
+            <div className="input-single">
+              <label htmlFor="titulo">Título da Patch Notes</label>
+              <input type="text" onChange={(event) => setTitle(event.target.value)} />
+            </div>
+            <div className="input-single">
+              <label htmlFor="summary">Resumo</label>
+              <textarea
+                value={summary}
+                onChange={handleSummaryChange}
+                maxLength={80}
+                placeholder="Máximo de 80 caracteres"
+              ></textarea>
+            </div>
+            <div className="input-single">
+              <label htmlFor="postText">Post</label>
+              <textarea onChange={(event) => setPostText(event.target.value)}></textarea>
+            </div>
+            <div className="input-single">
+              <label htmlFor="imagem">Imagem</label>
+              <input type="file" onChange={handleFileChange} />
+            </div>
+            {imgURL && <img src={imgURL} alt='imagem' style={{ maxWidth: "200px" }} />}
+            <button type="submit" className="button-submit">Publicar</button>
           </div>
-          <div className="InputSingle">
-            <label htmlFor="summary">Resumo</label>
-            <textarea
-              value={summary}
-              onChange={handleSummaryChange}
-              maxLength={80} // Define o limite máximo de caracteres
-            ></textarea>
-          </div>
-          <div className="InputSingle">
-            <label htmlFor="titulo">Post</label>
-            <textarea onChange={(event) => setPostText(event.target.value)}></textarea>
-          </div>
-          <div className="InputSingle">
-            <label htmlFor="imagem">Imagem</label>
-            <input type='file' onChange={handleFileChange} />
-          </div>
-          {imgURL && <img src={imgURL} alt='imagem' style={{ maxWidth: "200px" }} />}
-          <button type='submit'>Publicar</button>
-        </div>
-      </form>
-      {progress > 0 && progress < 100 && <progress value={progress} max="100" />}
+        </form>
+        {progress > 0 && progress < 100 && <progress value={progress} max="100" />}
+      </div>
     </div>
   );
 }

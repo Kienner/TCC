@@ -1,76 +1,108 @@
-$font-primary: 'Share Tech', sans-serif;
-$green-color: #27DB6F;
-$text-white: #E9EAEB;
-$bg-darkblue: #111827;
+// Header.scss
 
-
-header{
-  color: $text-white;
-  font-family: $font-primary;
+header {
+  color: white;
+  font-family: 'Share Tech', sans-serif;
   width: 100%;
   padding: 22px 5px;
-  background-color: $bg-darkblue;
-  color: white;
+  background-color: #111827;
 
-    nav{
-      width: 100%;
-      margin: 0 auto;
+  nav {
+    width: 100%;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+
+    .LogoDiv {
+      img {
+        width: 160px;
+      }
+    }
+
+    .menu-toggle {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+
+      .hamburger {
+        width: 30px;
+        height: 3px;
+        background-color: white;
+        margin: 5px;
+        transition: all 0.3s ease;
+      }
+
+      &.open .hamburger:nth-child(1) {
+        transform: rotate(-45deg) translate(-6px, 6px);
+      }
+
+      &.open .hamburger:nth-child(2) {
+        opacity: 0;
+      }
+
+      &.open .hamburger:nth-child(3) {
+        transform: rotate(45deg) translate(-5px, -5px);
+      }
+    }
+
+    ul {
       display: flex;
-      justify-content: space-around;
       align-items: center;
+      gap: 30px;
+      list-style: none;
 
-     
-      .LogoDiv{
+      @media (max-width: 768px) {
+        display: none;
+        position: absolute;
+        top: 60px;
+        left: 0;
+        width: 100%;
+        background-color: #111827;
+        flex-direction: column;
+        text-align: center;
+        padding: 10px;
+        z-index: 10;
 
-        img{
-          width: 160px;
+        &.open {
+          display: flex;
+        }
+
+        li {
+          margin: 10px 0;
         }
       }
 
-      ul{
-        display: flex;
-        justify-content: center;
-        align-items: center;
-       
-        gap: 30px;
+      li a {
+        font-size: 1.4rem;
+        color: white;
+        transition: color 0.5s ease;
 
-        li a{
-          font-size: 1.4rem;
-          color: white;
-          transition: color 0.5s ease;
-          
-        }
-
-       
-
-        li a:hover{
+        &:hover {
           color: #27DB6F;
-          
         }
       }
     }
-  
 
-    .ButtonsDiv{
+    .ButtonsDiv {
       display: flex;
       align-items: center;
       justify-content: center;
       width: auto;
       gap: 10px;
       width: 300px;
-      
-      
-      button{
+
+      button {
         cursor: pointer;
         flex: 1;
         background-color: transparent;
         padding: 15px 30px;
         border: none;
         color: white;
-        border: 1px solid $green-color;
+        border: 1px solid #27DB6F;
         border-radius: 14px;
       }
-      
-
     }
+  }
 }

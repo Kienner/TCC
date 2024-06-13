@@ -1,44 +1,161 @@
+
 $font-primary: 'Share Tech', sans-serif;
 $green-color: #27DB6F;
+$green-colorv2: #52df8a;
 $text-white: #E9EAEB;
+$text-whitev2: #c5c8cb;
 $bg-darkblue: #111827;
+$bg-darkbluev2: #1A2743;
+$bg-darkbluev3: #414E6A;
 
 
-*{
+* {
   margin: 0;
   padding: 0;
   text-decoration: none;
   list-style: none;
-
 }
 
-body{
+body {
   font-size: 16px;
-  font-family: $font-primary;
-  background-color: $bg-darkblue;
-    overflow-x: hidden;
-    
-  
+  font-family: 'Share Tech', sans-serif;
+  background-color: #111827;
 }
-/*hr{
-  width: 80%;
+
+
+
+hr {
+  width: 75%;
   margin: 0 auto;
-  border: 1px solid #272d3b;
-}
-*/
-
-hr{
-  display: none;
 }
 
+img{
+  border-radius: 14px;
+}
+
+section {
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+
+.SecBanner {
+  width: 100%;
+  padding: 50px 20px;
+  background-color: #111827;
+  color: #E9EAEB;
+
+  .Container {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    max-width: 1400px;
+    margin: 0 auto;
+
+    .div-texts {
+      max-width: 600px;
+
+      h1 {
+        font-size: 4.5rem;
+        color: #27DB6F;
+      }
+
+      h3 {
+        font-size: 3rem;
+        margin-top: 10px;
+      }
+
+      p {
+        margin: 10px 0;
+        font-size: 1.4rem;
+      }
+
+      .div-button {
+        margin-top: 20px;
+
+        button {
+          padding: 10px 100px;
+          background-color: #27DB6F;
+          border: none;
+          border-radius: 5px;
+          cursor: pointer;
+          font-size: 1rem;
+          color: $bg-darkbluev3;
+          font-weight: 800;
+        }
+      }
+    }
+
+    .div-img {
+      video {
+        max-width: 700px;
+        height: auto;
+        border-radius: 14px;
+
+      }
+    }
+  }
+}
+
+/* Media Queries for Banner */
+@media (max-width: 992px) {
+
+
+  h1{
+    font-size: 3.5rem;
+  }
+
+  .SecBanner .Container {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    .div-texts {
+      max-width: 100%;
+      margin-bottom: 20px;
+
+      .div-button{ 
+       
+        button{display: none;}
+      }
+
+      h1 {
+        font-size: 2.5rem;
+      }
+
+      h3 {
+        font-size: 1.5rem;
+      }
+    }
+
+    .div-img {
+      max-width: 100%;
+      video {
+        width: 100%;
+       
+        max-width: 100%;
+      }
+    }
+  }
 
 
 
-.CardsSection{
+
+  .CardsSection{
+
+    .CardsContainer{
+      display: flex;
+    flex-direction: column;
+    }
+    
+  }
+}
+
+.CardsSection {
   width: 100%;
   padding-bottom: 70px;
 
-  .Container{
+  .Container {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -47,340 +164,263 @@ hr{
     margin: 0 auto;
     padding: 40px 0px 60px 0px;
 
-
-    h2{
-      color: $green-color;
+    h2 {
+      color: #27DB6F;
       font-size: 3.5rem;
     }
 
-    p{
+    p {
       font-size: 2rem;
       padding: 20px;
     }
 
-
-    .CardsContainer{
+    .CardsContainer {
       padding-top: 2rem;
       width: 100%;
       display: flex;
       gap: 20px;
       justify-content: space-evenly;
 
-      .Card{
+      .Card {
         display: flex;
         flex-direction: column;
         align-items: center;
         justify-content: center;
+        text-align: center;
         padding: 10px 10px;
-        border: 1px solid #27DB6F;
+        background: $bg-darkbluev2;
+        border-radius: 14px;
+        box-shadow: 0px 10px 40px #16191F;
 
-        img{
+        img {
           width: 14rem;
           padding-left: 3.5rem;
         }
 
-        h2{
-          font-size: 2.5rem
+        h2 {
+          font-size: 2.5rem;
         }
 
-        p{
-          color: $text-white;
+        p {
+          color: #E9EAEB;
           font-size: 1.4rem;
         }
       }
     }
   }
- 
-  
 }
 
-
-
-
-/*
-
-
-.SobreSection{
-  font-family: $font-primary;
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 150px;
-
-  .Container{
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    
-    .Content{
-      flex: 1;
-
-      
-      h2{
-        font-size: 5rem;
-        color: $green-color;
-      }
-
-      p{
-        color: $text-white;
-        text-align: left;
-           max-width: 700px;
-      }
-
-      .TextContainer{
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        padding: 10px;
-      }
-
-      button{
-        border: 1px solid $green-color;
-        color: $text-white;
-        background-color: transparent;
-        padding: 20px 60px;
-        border-radius: 14px;
-        font-size: 1rem;
-        margin-top: 15px;
-        cursor: pointer;
-      }
-      
-    }
-
-
-    .MidiaContainer{
-
-      img{
-        height: 100%;
-        width: 600px;
-      }
-    }
-  }
-
-  hr{
-   
-    width: 70%;
-    margin: 0 auto;
-    border: 1px solid #272d3b;
-  }
-}
-
-*/
-
-.SobreSection{
+.SobreSection {
   padding-top: 50px;
   color: white;
   width: 100%;
   padding-bottom: 70px;
 
-  .Wrapper{
+  .Wrapper {
     position: relative;
     display: flex;
     flex-direction: column;
 
-    .Description{
+    .Description {
       width: 100%;
-      background-color:$green-color;
+      background: $bg-darkbluev2;
       width: 40rem;
       height: 10rem;
       position: absolute;
       top: 19rem;
       left: 52%;
 
-      p{
+      p {
         padding: 10px;
-        font-size: 300;
         font-size: 1.5rem;
         text-align: left;
       }
-      
-      
-     
-
-
     }
 
-    .Container{
+    .Container {
       margin: 0 auto;
       max-width: 1400px;
       display: grid;
       gap: 22px;
-      grid-template-columns: repeat(3, 30% 25% 40% );
+      grid-template-columns: repeat(3, 30% 25% 40%);
 
-
-      h2{
+      h2 {
         font-weight: normal;
         font-size: 5rem;
-        color: $text-white;
-        
-        span{
-          color: $green-color;
+        color: #E9EAEB;
+
+        span {
+          color: #27DB6F;
           font-weight: 600;
         }
       }
 
-      img{
+      img {
         width: 100%;
         height: 100%;
       }
     }
-
-
-
   }
-
-
-   
-  }
-
-
-
-  /*
-.GameplaySection{
-  font-family: $font-primary;
-  width: 100%;
-  padding-left: 15px;
-  padding-right: 15px;
-  padding-top: 200px;
-  padding-bottom: 50px;
-
-  .Container{
-    max-width: 1400px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: row-reverse;
-    
-    .Content{
-      flex: 1;
-
-      
-      h2{
-        font-size: 5rem;
-        color: $green-color;
-        text-align: right;
-      }
-
-      p{
-        color: $text-white;
-        text-align: right;
-        max-width: 700px;
-      }
-
-      .TextContainer{
-        display: flex;
-        align-items: flex-end;
-        flex-direction: column;
-        gap: 20px;
-      }
-
-      button{
-        border: 1px solid $green-color;
-        color: $text-white;
-        background-color: transparent;
-        padding: 20px 60px;
-        border-radius: 14px;
-        font-size: 1rem;
-        margin-top: 15px;
-        cursor: pointer;
-      }
-      
-    }
-
-
-    .MidiaContainer{
-
-      img{
-        height: 100%;
-        width: 600px;
-      }
-    }
-  }
-
- 
 }
 
-*/
-
-
-
-
-
-.SectionGameplay{
+.SectionGameplay {
   width: 100%;
   padding: 220px 10px;
+  padding-left: 15px;
+  padding-right: 15px;
 
-
-  .Container{
-    margin:  0 auto;
+  .Container {
+    margin: 0 auto;
     display: grid;
     padding: 10px;
     gap: 6rem;
     max-width: 1400px;
-    grid-template-columns: repeat(2,1fr);
-    
-    .Content{
+    grid-template-columns: repeat(2, 1fr);
+
+    .Content {
       order: 2;
       display: flex;
       flex-direction: column;
-      
 
-      .TitleDiv{
-
-        h2{
+      .TitleDiv {
+        h2 {
           font-size: 5rem;
           font-weight: normal;
-          color: $green-color;
+          color: #27DB6F;
         }
 
-        span{
-          color: $text-white;
+        span {
+          color: #E9EAEB;
         }
-        
       }
 
-      .CardsDiv{
+      .CardsDiv {
         padding-top: 3.5rem;
         display: grid;
-        grid-template-columns: repeat(2,200px);
+        grid-template-columns: repeat(2, 200px);
         gap: 40px;
 
-
-        .Card{
+        .Card {
           display: flex;
           flex-direction: column;
           justify-content: center;
           align-items: flex-start;
 
-
-          h4{
+          h4 {
             font-size: 1.5rem;
-            color: $green-color;
-          
+            color: #27DB6F;
           }
 
-          p{
-            color:  $text-white;
+          p {
+            color: #E9EAEB;
           }
-        
         }
       }
     }
-
   }
 
-
-  .WrapperMidia{
- 
-
-    img{
+  .WrapperMidia {
+    img {
       height: 100%;
       width: 100%;
     }
   }
 
-
-  .icon{
-    color: $text-white;
+  .icon {
+    color: #E9EAEB;
     font-size: 4rem;
+  }
+}
+
+
+@media (max-width: 992px) {
+
+
+
+  .SectionGameplay{
+    padding-top: 10px;
+
+    .WrapperMidia{
+      img{
+        display: none;
+      }
+    }
+
+    .Container {
+      display: flex;
+      flex-direction: column;
+      .Content{
+
+        .CardsDiv{
+          grid-template-columns: repeat(1,1fr);
+          justify-items: center;
+
+          .Card{
+            background-color: $bg-darkbluev2;
+            border-radius: 14px;
+            display: flex;
+            align-items: center;
+            width: 100%;
+            padding: 20px;
+            box-shadow: 0px 10px 40px #16191F;
+    
+          }
+        }
+        .TitleDiv h2{
+          text-align: center;
+          font-size: 3.5rem;
+          
+        }
+      }
+    }
+  }  
+
+
+
+  .SobreSection {
+    .Wrapper {
+      .Container h2{
+        font-size: 3.5rem;
+      }
+    }
+  }
+}
+
+
+
+
+
+
+
+
+@media (max-width: 1440px) {
+  .SobreSection {
+    .Wrapper {
+      .Description {
+        left: 32%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1140px) {
+  .SobreSection {
+    padding-left: 15px;
+    padding-right: 15px;
+
+    .Wrapper {
+      .Description {
+        display: none;
+      }
+
+      .Container {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+      }
+
+      h2 {
+        text-align: center;
+      }
+    }
   }
 }

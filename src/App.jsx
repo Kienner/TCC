@@ -4,6 +4,7 @@ import Home from './components/Home/Home';
 import Login from './components/Login/Login';
 import Register from './components/Register/Register';
 import CadastrarAtt from './components/CadastrarAtt/CadastrarAtt';
+import ResetPassword from './components/ResetPassword/ResetPassword';
 import Posts from './components/Posts/Posts';
 import SinglePost from './components/SinglePost/SinglePost';
 import History from './components/History/History';
@@ -20,6 +21,8 @@ export class App extends Component {
         <Route path="/historia" element={<History />} />
         <Route path="/posts" element={<Posts />} />
         <Route path="/single-post/:postId" element={<SinglePost />} />
+        <Route path="/recuperacao" element={<ResetPassword />} />
+               
         {/* Redirect from root to register */}
         <Route path="/*" element={<Navigate to="/register" />} />
       </Routes>

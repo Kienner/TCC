@@ -7,8 +7,8 @@ export default class Footer extends Component {
       <footer>
         <div className="Container">
           <div className="DivContent">
-            <img src="/src/assets/img/logo.png" alt="" />
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit.</p>
+            <img src="/logo.png" alt="" />
+           
           </div>
 
           <ul>
@@ -30,7 +30,7 @@ export default class Footer extends Component {
           </ul>
 
           <div>
-            <img src="/src/assets/img/sobre.jpg" alt="" />
+          
           </div>
         </div>
       </footer>

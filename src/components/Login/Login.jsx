@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Login.scss';
 import { auth } from '../../services/firebaseConfig';
 import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { Link } from 'react-router-dom';
 
 export function Login() {
   const [email, setEmail] = useState("");
@@ -26,11 +27,7 @@ export function Login() {
   return (
     <div className="main-login">
       <div className="left-login">
-      <h1> <br />  Faça login <br /> e adentre o universo de Brasil Time Odssey</h1>
-       
-
-       <img src="\src\assets\img\Player_Attack.gif" class="left-gif" alt="animação ataque" />
-
+        <img src="/logo.png" className="left-gif" alt="logo" />
       </div>
 
       <div className="right-login">
@@ -41,9 +38,9 @@ export function Login() {
               <label htmlFor="email">E-mail</label>
               <input
                 type="text"
-                name='email'
-                id='email'
-                placeholder='calabreso@gmail.com'
+                name="email"
+                id="email"
+                placeholder="calabreso@gmail.com"
                 onChange={e => setEmail(e.target.value)}
               />
             </div>
@@ -52,9 +49,9 @@ export function Login() {
               <label htmlFor="senha">Senha</label>
               <input
                 type="password"
-                name='password'
-                id='password'
-                placeholder='*****'
+                name="password"
+                id="password"
+                placeholder="*****"
                 onChange={e => setPassword(e.target.value)}
               />
             </div>
@@ -62,6 +59,7 @@ export function Login() {
             <button className="btn-login" onClick={handleSignIn}>
               Entrar
             </button>
+            <p>Esqueceu sua senha? <Link to="/recuperacao">Recupere aqui</Link></p>
           </form>
         </div>
       </div>
