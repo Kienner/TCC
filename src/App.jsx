@@ -22,6 +22,7 @@ export class App extends Component {
         <Route path="/posts" element={<Posts />} />
         <Route path="/single-post/:postId" element={<SinglePost />} />
         <Route path="/recuperacao" element={<ResetPassword />} />
+        <Route path="/historia" element={<History/>} />
                
         {/* Redirect from root to register */}
         <Route path="/*" element={<Navigate to="/register" />} />

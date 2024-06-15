@@ -10,10 +10,10 @@ export function Login() {
   const [signInWithEmailAndPassword, user, loading, error] = useSignInWithEmailAndPassword(auth);
 
   async function handleSignIn(e) {
-    e.preventDefault();
+    e.preventDefault(); 
+
     try {
       await signInWithEmailAndPassword(email, password);
-     
       if (user) {
         window.location.href = '/';
       } else {
@@ -33,7 +33,7 @@ export function Login() {
       <div className="right-login">
         <div className="card-login">
           <h1>LOGIN</h1>
-          <form>
+          <div>
             <div className="textfield">
               <label htmlFor="email">E-mail</label>
               <input
@@ -41,6 +41,7 @@ export function Login() {
                 name="email"
                 id="email"
                 placeholder="calabreso@gmail.com"
+                value={email}
                 onChange={e => setEmail(e.target.value)}
               />
             </div>
@@ -51,19 +52,20 @@ export function Login() {
                 type="password"
                 name="password"
                 id="password"
-                placeholder="*****"
+                placeholder="***"
+                value={password}
                 onChange={e => setPassword(e.target.value)}
               />
             </div>
-            
-            <button className="btn-login" onClick={handleSignIn}>
+
+            <button className="btn-login" onClick={handleSignIn} type="button"> {/* Alterado para type="button" */}
               Entrar
             </button>
             <p>Esqueceu sua senha? <Link to="/recuperacao">Recupere aqui</Link></p>
-          </form>
+            {error && <p className="error-message">{error.message}</p>}
+          </div>
         </div>
       </div>
-      {error && <p className="error-message">Erro ao fazer login: {error.message}</p>}
     </div>
   );
 }

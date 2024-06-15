@@ -9,13 +9,14 @@ $bg-darkbluev3: #414E6A;
 
 body {
     margin: 0;
+    font-family: $font-primary;
 }
 
 body * {
     box-sizing: border-box;
 }
 
-.main-register { /* Renomeei a classe para main-register */
+.main-register {
     width: 100vw;
     height: 100vh;
     background: $bg-darkblue;
@@ -24,9 +25,9 @@ body * {
     align-items: center;
 }
 
-.left-register { /* Renomeei a classe para left-register */
+.left-register {
     width: 50vw;
-    display: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -41,15 +42,15 @@ body * {
     width: 25vw;
 }
 
-.right-register { /* Renomeei a classe para right-register */
+.right-register {
     width: 50vw;
-    display: 100vh;
+    height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
 }
 
-.card-register { /* Renomeei a classe para card-register */
+.card-register {
     width: 60%;
     display: flex;
     justify-content: center;
@@ -61,7 +62,7 @@ body * {
     box-shadow: 0px 10px 40px #16191F;
 }
 
-.card-register > h1 { /* Renomeei a classe para card-register */
+.card-register > h1 {
     color: $green-color;
     font-weight: 800;
     margin: 0;
@@ -87,6 +88,12 @@ body * {
     box-shadow: 0px 10px 40px #16191F;
     outline: none;
     box-sizing: border-box;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.textfield > input:focus {
+    background: darken($bg-darkbluev3, 10%);
+    box-shadow: 0px 10px 40px darken(#16191F, 20%);
 }
 
 .textfield > label {
@@ -98,10 +105,10 @@ body * {
     color: $text-whitev2;
 }
 
-.btn-register { /* Adaptei a classe do botão para btn-register */
+.btn-register {
     width: 80%;
     padding: 16px 0px;
-    margin: 25px;
+    margin: 25px 0;
     border: none;
     border-radius: 8px;
     outline: none;
@@ -112,10 +119,31 @@ body * {
     color: $bg-darkblue;
     cursor: pointer;
     box-shadow: 0px 10px 20px -17px $green-colorv2;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-register:hover {
+    background-color: darken($green-color, 10%);
+    box-shadow: 0px 10px 20px -17px darken($green-colorv2, 20%);
+}
+
+.error-message, .success-message {
+    width: 100%;
+    text-align: center;
+    margin-top: 15px;
+    font-size: 14px;
+}
+
+.error-message {
+    color: #ff0000;
+}
+
+.success-message {
+    color: #28a745;
 }
 
 @media only screen and (max-width: 950px) {
-    .card-register { /* Renomeei a classe para card-register */
+    .card-register {
         width: 85%;
     }
 }
@@ -138,8 +166,7 @@ body * {
     .left-gif {
         width: 50vw;
     }
-
-    .card-register { /* Renomeei a classe para card-register */
+    .card-register {
         width: 90%;
     }
 }

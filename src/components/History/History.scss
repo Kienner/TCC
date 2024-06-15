@@ -1,0 +1,41 @@
+.HistoriaSection {
+    max-width: 1440px;
+    color: white;
+    font-size: 27px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    align-items: center;
+    justify-items: center;
+  
+    .container {
+      width: 100%;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: 30px;
+  
+      .part1,
+      .part2,
+      .part3 {
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 30px;
+        align-items: center;
+        width: 100%;
+  
+        .video-div {
+            border-radius: 14px;
+          video {
+            
+            width: 100%;
+          }
+        }
+      }
+  
+      .invert {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  }
+  
