@@ -1,41 +1,125 @@
 .HistoriaSection {
-    max-width: 1440px;
-    color: white;
-    font-size: 27px;
-    margin: 0 auto;
+  max-width: 1440px;
+  padding-top: 3rem;
+  color: white;
+  font-size: 27px;
+  margin: 0 auto;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  align-items: center;
+  justify-items: center;
+
+
+
+  .container {
+    width: 100%;
     display: grid;
     grid-template-columns: repeat(1, 1fr);
-    align-items: center;
-    justify-items: center;
-  
-    .container {
-      width: 100%;
+    gap: 30px;
+
+    .part1,
+    .part2,
+    .part3 {
+      margin: 0 auto;
       display: grid;
-      grid-template-columns: repeat(1, 1fr);
+      grid-template-columns: repeat(2, 1fr);
       gap: 30px;
-  
+      align-items: center;
+      width: 100%;
+
+      .video-div {
+        border-radius: 14px;
+        video {
+          width: 100%;
+        }
+      }
+
+      .text-div {
+        p {
+          margin: 0;
+        }
+      }
+    }
+
+    .invert {
+      grid-template-columns: 1fr 1fr;
+    }
+  }
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 1024px) {
+  .HistoriaSection {
+    font-size: 22px;
+
+    .container {
       .part1,
       .part2,
       .part3 {
-        margin: 0 auto;
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        gap: 30px;
-        align-items: center;
-        width: 100%;
-  
+        grid-template-columns: 1fr;
+        text-align: center;
+
+        .text-div {
+          order: 2;
+        }
+        
         .video-div {
-            border-radius: 14px;
-          video {
-            
-            width: 100%;
-          }
+          order: 1;
+          margin-bottom: 20px;
         }
       }
-  
+
       .invert {
-        grid-template-columns: 1fr 1fr;
+        grid-template-columns: 1fr;
       }
     }
   }
-  
+}
+
+
+.p-end{
+  padding-top: 3rem;
+  padding-bottom: 10rem;
+}
+@media (max-width: 768px) {
+  .HistoriaSection {
+    font-size: 20px;
+
+    .container {
+      .part1,
+      .part2,
+      .part3 {
+        grid-template-columns: 1fr;
+        gap: 20px;
+
+        .video-div {
+          video {
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 480px) {
+  .HistoriaSection {
+    font-size: 18px;
+
+    .container {
+      .part1,
+      .part2,
+      .part3 {
+        grid-template-columns: 1fr;
+        gap: 15px;
+
+        .video-div {
+          video {
+            width: 100%;
+            height: auto;
+          }
+        }
+      }
+    }
+  }
+}

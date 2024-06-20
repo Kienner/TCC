@@ -96,7 +96,7 @@ function CustomRegister() {
                 type="password"
                 name="password"
                 id="password"
-                placeholder="***"
+                placeholder="Digite sua senha"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
               />

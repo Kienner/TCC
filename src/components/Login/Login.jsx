@@ -24,6 +24,21 @@ export function Login() {
     }
   }
 
+  const getErrorMessage = (error) => {
+    if (error) {
+      switch (error.code) {
+        case 'auth/wrong-password':
+        case 'auth/user-not-found':
+          return 'Senha ou email incorretos';
+        case 'auth/network-request-failed':
+          return 'Senha ou email incorretos';
+        default:
+          return 'Ocorreu um erro. Por favor, tente novamente';
+      }
+    }
+    return '';
+  };
+
   return (
     <div className="main-login">
       <div className="left-login">
@@ -33,14 +48,14 @@ export function Login() {
       <div className="right-login">
         <div className="card-login">
           <h1>LOGIN</h1>
-          <div>
+          <div className='container-fields'>
             <div className="textfield">
               <label htmlFor="email">E-mail</label>
               <input
                 type="text"
                 name="email"
                 id="email"
-                placeholder="calabreso@gmail.com"
+                placeholder="emailexemplo@gmail.com"
                 value={email}
                 onChange={e => setEmail(e.target.value)}
               />
@@ -52,17 +67,17 @@ export function Login() {
                 type="password"
                 name="password"
                 id="password"
-                placeholder="***"
+                placeholder="Digite sua senha"
                 value={password}
                 onChange={e => setPassword(e.target.value)}
               />
             </div>
 
-            <button className="btn-login" onClick={handleSignIn} type="button"> {/* Alterado para type="button" */}
+            <button className="btn-login" onClick={handleSignIn} type="button">
               Entrar
             </button>
-            <p>Esqueceu sua senha? <Link to="/recuperacao">Recupere aqui</Link></p>
-            {error && <p className="error-message">{error.message}</p>}
+            <p className='forgot-p'> Esqueceu sua senha? <Link to="/recuperacao"><span>Recupere aqui</span></Link></p>
+            {error && <p className="error-message">{getErrorMessage(error)}</p>}
           </div>
         </div>
       </div>

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { collection, query, orderBy, limit, getDocs} from 'firebase/firestore'; 
+import { collection, query, orderBy, limit, getDocs } from 'firebase/firestore';
 import { db } from '../../services/firebaseConfig';
 
 // Importe os componentes necessários
@@ -38,70 +38,51 @@ function Home() {
         console.error('Erro ao buscar as últimas postagens:', error);
       }
     };
-  
+
     fetchRecentUpdates();
   }, []);
-  
 
   return (
     <>
       <Header />
 
-
       <section className='SecBanner'>
-
-      <div className="Container">
-        <div className="div-texts">
-          <h1 id="h1">Brazil Time Odyssey</h1>
-          <h3>Entre nessa aventura</h3>
-          <p>Ao explorar um contexto multiversal, eles serão levados a uma jornada emocionante através de diferentes períodos e realidades alternativas do Brasil.</p>
-          <p>Prepare-se para descobrir segredos antigos, enfrentar desafios extraordinários e desvendar os mistérios entrelaçados deste mundo vibrante e único.</p>
+        <div className="Container">
+          <div className="div-texts">
+            <h1 id="h1">Brazil Time Odyssey</h1>
+            <h3>Entre nessa aventura</h3>
+            <p>Ao explorar um contexto multiversal, eles serão levados a uma jornada emocionante através de diferentes períodos e realidades alternativas do Brasil.</p>
+            <p>Prepare-se para descobrir segredos antigos, enfrentar desafios extraordinários e desvendar os mistérios entrelaçados deste mundo vibrante e único.</p>
 
             <div className="div-button">
-              <button>Download</button>
+              <a href="/game.zip" download>
+                <button>Download</button>
+              </a>
             </div>
+          </div>
+
+          <div className="div-img">
+            <video height="360" autoPlay muted>
+              <source src="/video.mp4" type="video/mp4" />
+            </video>
+          </div>
         </div>
-
-
-        <div className="div-img">
-          <video  height="360" autoPlay muted>
-          <source src="/video.mp4" type="video/mp4" />
-    
-        </video>
-        </div>
-
-       
-      
-    </div>
-
-
- 
-    </section>
-
-
-
-
-
+      </section>
 
       <section className='UltimasNoticasSection'>
-        {/* Cards de atualizações */}
         <div className="Container">
           <div className="CardsContainer">
             {recentUpdates.map(update => (
               <div className="Card" key={update.id}>
-                {/* Renderizar conteúdo da atualização */}
                 <h2>{update.title}</h2>
-                {/* Se a sua imagem estiver em um servidor externo, use a tag <img> */}
                 <img src={update.imageUrl} alt="Imagem da Postagem" />
-                {/* Se a sua imagem estiver armazenada localmente, você pode importá-la */}
-                {/* <img src={require(update.imageUrl)} alt="Imagem da Postagem" /> */}
               </div>
             ))}
           </div>
         </div>
-        <hr />
+        
       </section>
-    
+
       <section className='CardsSection'>
         <div className="Container">
           <div className="CardsContainer">
@@ -110,13 +91,11 @@ function Home() {
               <h2>Exploração</h2>
               <p>Descubra o Brasil em toda sua glória: desde a selva densa até as alturas do espaço.</p>
             </div>
-
             <div className="Card">
               <img src="\Player_Attack.gif" alt="" />
               <h2>Combate</h2>
               <p>Desvende segredos antigos, aprenda com a história e desbloqueie conhecimentos profundos.</p>
             </div>
-
             <div className="Card">
               <img src="\Player_Attack.gif" alt="" />
               <h2>Conhecimento</h2>
@@ -124,7 +103,6 @@ function Home() {
             </div>
           </div>
         </div>
-      
       </section>
 
       <section className='SobreSection' id="Sobre">
@@ -135,41 +113,41 @@ function Home() {
             <img src="/dialogoforacasa.jpeg" alt="" />
           </div>
           <div className="Description">
-            <p>Com uma mistura de elementos de ficção científica e história brasileira, o jogo promete uma experiência imersiva e emocionante para os jogadores explorarem e descobrirem as diversas facetas do Brasil em um contexto multiversal.</p>  
-          </div>  
+            <p>Com uma mistura de elementos de ficção científica e história brasileira, o jogo promete uma experiência imersiva e emocionante para os jogadores explorarem e descobrirem as diversas facetas do Brasil em um contexto multiversal.</p>
+          </div>
         </div>
       </section>
 
       <section className='SectionGameplay' id="Gameplay">
         <div className="Container">
           <div className="Content">
-            <div className='TitleDiv'> 
+            <div className='TitleDiv'>
               <h2>Gameplay <span>e</span> possibilidades!</h2>
             </div>
             <div className="CardsDiv">
               <div className="Card">
-                <LuSword className='icon'/>
+                <LuSword className='icon' />
                 <h4>Aventura Única</h4>
-                <p>Deslumbre uma aventura louca!</p>
-                <p>empolgue-se, jogador</p>
+                <p>Deslumbre uma aventura diferente!</p>
+             
               </div>
               <div className="Card">
                 <TbMapSearch className='icon' />
-                <h4>Aventura Única</h4>
-                <p>Deslumbre uma aventura louca!</p>
-                <p>empolgue-se, jogador</p>
+                <h4>Explore o Mapa</h4>
+                <p>Descubra caminhos para a diversão!</p>
+               
               </div>
               <div className="Card">
-                <GiBookCover className='icon'/>
-                <h4>Aventura Única</h4>
-                <p>Deslumbre uma aventura louca!</p>
-                <p>empolgue-se, jogador</p>
+                <GiBookCover className='icon' />
+                <h4>Aprenda</h4>
+                <p>Aprenda sobre um novo universo enquanto se diverte</p>
+              
               </div>
               <div className="Card">
-                <RiSave3Fill className='icon'/>
+                <RiSave3Fill className='icon' />
                 <h4>Aventura Única</h4>
-                <p>Deslumbre uma aventura louca!</p>
-                <p>empolgue-se, jogador</p>
+                <p>Mantenha seu progresso de jogo salvo!</p>
+               
               </div>
             </div>
           </div>
@@ -178,11 +156,9 @@ function Home() {
           </div>
         </div>
       </section>
-      
+
       <Slider slides={slides} />
-
-      <VLibrasComponent/>
-
+      <VLibrasComponent />
       <Footer />
     </>
   );

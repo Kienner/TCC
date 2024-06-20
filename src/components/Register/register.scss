@@ -66,6 +66,7 @@ body * {
     color: $green-color;
     font-weight: 800;
     margin: 0;
+    font-size: 44px;
 }
 
 .textfield {
@@ -106,7 +107,7 @@ body * {
 }
 
 .btn-register {
-    width: 80%;
+    width: 100%;
     padding: 16px 0px;
     margin: 25px 0;
     border: none;
@@ -145,6 +146,12 @@ body * {
 @media only screen and (max-width: 950px) {
     .card-register {
         width: 85%;
+
+
+    }
+
+    .card-register > h1{
+        font-size: 30px;
     }
 }
 

@@ -28,6 +28,10 @@ body * {
   align-items: center;
 }
 
+form{
+  width: 100%;
+}
+
 .card-cadastrar {
   width: 60%;
   display: flex;
@@ -60,6 +64,7 @@ body * {
 .input-single > label {
   color: $text-white;
   margin-bottom: 10px;
+  font-size: 22px;
 }
 
 .input-single > input,
@@ -81,7 +86,7 @@ body * {
 }
 
 .button-submit {
-  width: 80%;
+  width: 90%;
   padding: 16px 0px;
   margin: 25px;
   border: none;
@@ -99,7 +104,13 @@ body * {
 @media only screen and (max-width: 950px) {
   .card-cadastrar {
     width: 85%;
+
+    h1{
+      font-size: 32px;
+      text-align: center;
+    }
   }
+
 }
 
 @media only screen and (max-width: 600px) {

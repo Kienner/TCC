@@ -53,7 +53,7 @@ function History() {
 
           </div>
 
-          <p>A narrativa culmina em um confronto épico com os Time Rifters, onde as escolhas do protagonista determinarão o destino de todos. "Brazil Time Odyssey" transporta os jogadores para um período fascinante da história brasileira, explorando os limites da ciência e da imaginação.</p>
+          <p className='p-end'>A narrativa culmina em um confronto épico com os Time Rifters, onde as escolhas do protagonista determinarão o destino de todos. "Brazil Time Odyssey" transporta os jogadores para um período fascinante da história brasileira, explorando os limites da ciência e da imaginação.</p>
 
         </div>
 
